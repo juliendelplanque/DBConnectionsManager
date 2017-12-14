@@ -1,0 +1,31 @@
+{
+	"commentStamp" : "JulienDelplanque 12/14/2017 15:09",
+	"super" : "ComposableModel",
+	"category" : "DBConnectionsManager-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"hostnameLabel",
+		"hostnameTextInput",
+		"portLabel",
+		"portTextInput",
+		"userLabel",
+		"userTextInput",
+		"passwordLabel",
+		"passwordTextInput",
+		"databaseLabel",
+		"databaseTextInput",
+		"okButton",
+		"cancelButton",
+		"portTextInputRegex",
+		"hostnameTextInputRegex",
+		"databaseTextInputRegex",
+		"userTextInputRegex",
+		"passwordTextInputRegex",
+		"connectionNameLabel",
+		"connectionNameInput"
+	],
+	"name" : "DBConnectionWidget",
+	"type" : "normal"
+}

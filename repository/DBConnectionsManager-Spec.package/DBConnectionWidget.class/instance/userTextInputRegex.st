@@ -1,0 +1,3 @@
+public api
+userTextInputRegex
+	^ userTextInputRegex
