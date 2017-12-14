@@ -36,4 +36,8 @@ initializePresenter
 		
 	cancelButton
 		label: 'Cancel';
-		action: [ self window close ]
+		action: [ self window close ].
+		
+	testConnectionButton
+		label: 'Test connection';
+		action: [ self testConnection ]

@@ -19,4 +19,5 @@ initializeWidgets
 	passwordTextInput := self newTextInput.
 	
 	okButton := self newButton.
-	cancelButton := self newButton
+	cancelButton := self newButton.
+	testConnectionButton := self newButton

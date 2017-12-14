@@ -29,5 +29,6 @@ defaultSpec
 						add: #passwordTextInput ] height: self inputTextHeight;
 				newRow: [ :row |
 					row
+						add: #testConnectionButton;
 						add: #cancelButton;
 						add: #okButton ] height: self buttonHeight ]

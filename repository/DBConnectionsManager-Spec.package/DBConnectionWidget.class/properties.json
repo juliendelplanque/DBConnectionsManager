@@ -24,7 +24,8 @@
 		"userTextInputRegex",
 		"passwordTextInputRegex",
 		"connectionNameLabel",
-		"connectionNameInput"
+		"connectionNameInput",
+		"testConnectionButton"
 	],
 	"name" : "DBConnectionWidget",
 	"type" : "normal"
