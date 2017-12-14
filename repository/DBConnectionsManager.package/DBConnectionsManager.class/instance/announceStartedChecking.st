@@ -1,0 +1,3 @@
+announcing
+announceStartedChecking
+	self announce: DBConnectionsManagerStartedChecking new

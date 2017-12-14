@@ -1,0 +1,3 @@
+announcing
+announceStoppedChecking
+	self announce: DBConnectionsManagerStoppedChecking new

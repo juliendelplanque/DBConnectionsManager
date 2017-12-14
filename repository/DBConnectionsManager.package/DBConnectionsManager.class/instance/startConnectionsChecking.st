@@ -6,4 +6,6 @@ startConnectionsChecking
 			self checkConnection: connectionDescription ].
 			self sleepTime wait
 		] doWhileTrue: [ shouldContinueConnectionsChecking ]
-	] forkNamed: 'DBConnectionsManager''s connections checker'
+	] forkNamed: 'DBConnectionsManager''s connections checker'.
+
+	self announceStartedChecking

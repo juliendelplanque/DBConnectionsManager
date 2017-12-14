@@ -1,3 +1,5 @@
 connections checking
 stopConnectionsChecking
-	shouldContinueConnectionsChecking := false
+	shouldContinueConnectionsChecking := false.
+	
+	self announceStoppedChecking

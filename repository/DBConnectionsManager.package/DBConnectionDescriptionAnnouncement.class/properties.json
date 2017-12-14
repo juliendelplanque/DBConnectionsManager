@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "JulienDelplanque 12/14/2017 14:46",
-	"super" : "Announcement",
+	"super" : "DBConnectionsManagerAnnouncement",
 	"category" : "DBConnectionsManager-Announcements",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"connectionsManager"
+		"connectionDescription"
 	],
-	"name" : "DBConnectionsManagerAnnouncement",
+	"name" : "DBConnectionDescriptionAnnouncement",
 	"type" : "normal"
 }
