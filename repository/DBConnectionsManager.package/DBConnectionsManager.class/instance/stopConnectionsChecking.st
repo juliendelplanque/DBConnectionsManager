@@ -1,0 +1,3 @@
+connections checking
+stopConnectionsChecking
+	shouldContinueConnectionsChecking := false

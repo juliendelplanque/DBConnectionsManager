@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "JulienDelplanque 12/14/2017 11:37",
+	"super" : "Object",
+	"category" : "DBConnectionsManager-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"hostname",
+		"port",
+		"databaseName",
+		"userName",
+		"password",
+		"connection",
+		"database"
+	],
+	"name" : "DBConnectionDescription",
+	"type" : "normal"
+}

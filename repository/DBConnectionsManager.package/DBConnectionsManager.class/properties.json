@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "DBConnectionsManager-Core",
+	"classinstvars" : [
+		"current"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"connections",
+		"announcer",
+		"connectionsCheckerThread",
+		"wasAliveDict",
+		"sleepTime",
+		"shouldContinueConnectionsChecking"
+	],
+	"name" : "DBConnectionsManager",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+announcing
+announceConnectionDescriptionAdded: aDBConnectionDescription
+	self announce: (DBConnectionDescriptionAdded connectionDescription: aDBConnectionDescription)

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "DBDatabase",
+	"category" : "DBConnectionsManager-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DBPostgreSQLDatabase",
+	"type" : "normal"
+}

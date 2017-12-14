@@ -1,0 +1,3 @@
+announcing
+announce: aDBConnectionsManagerAnnouncement
+	self announcer announce: aDBConnectionsManagerAnnouncement
