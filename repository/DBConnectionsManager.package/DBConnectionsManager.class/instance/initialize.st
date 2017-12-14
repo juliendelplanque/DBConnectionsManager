@@ -3,6 +3,6 @@ initialize
 	super initialize.
 	self
 		connections: OrderedCollection new;
-		sleepTime: 5 seconds.
+		sleepTime: self defaultSleepTime.
 		
 	wasAliveDict := Dictionary new
