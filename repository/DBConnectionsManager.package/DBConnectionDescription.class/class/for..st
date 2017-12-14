@@ -1,5 +1,5 @@
 instance creation
-for: aDBDatabase
+for: aDBDataBaseManagementSystem
 	^ self new
-		database: aDBDatabase;
+		dbms: aDBDataBaseManagementSystem;
 		yourself

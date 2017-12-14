@@ -1,3 +1,3 @@
 api
 connectionUrl
-	^ self database buildUrlFrom: self
+	^ self dbms buildUrlFrom: self

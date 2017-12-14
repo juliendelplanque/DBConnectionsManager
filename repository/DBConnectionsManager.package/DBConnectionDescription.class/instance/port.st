@@ -1,3 +1,3 @@
 accessing
 port
-	^ port ifNil: [ self database defaultConnectionPort ]
+	^ port ifNil: [ self dbms defaultConnectionPort ]

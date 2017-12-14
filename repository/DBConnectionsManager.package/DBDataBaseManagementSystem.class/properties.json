@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
-	"super" : "DBDatabase",
+	"commentStamp" : "JulienDelplanque 12/14/2017 14:34",
+	"super" : "Object",
 	"category" : "DBConnectionsManager-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "DBPostgreSQLDatabase",
+	"name" : "DBDataBaseManagementSystem",
 	"type" : "normal"
 }

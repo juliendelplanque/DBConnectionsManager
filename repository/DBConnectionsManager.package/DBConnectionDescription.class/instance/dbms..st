@@ -1,3 +1,3 @@
 accessing
-database: anObject
+dbms: anObject
 	database := anObject
