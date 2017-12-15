@@ -11,6 +11,7 @@ adaptToConnectionsManager: aDBConnectionsManager
 		when: DBConnectionDied send: #connectionDied: to: self;
 		when: DBConnectionRevive send: #connectionRevive: to: self;
 		when: DBConnectionWasDisconnectedByUser send: #connectionWasDisconnectedByUser: to: self;
+		when: DBConnectionWasConnectedByUser send: #connectionWasConnectedByUser: to: self;
 		when: DBConnectionsManagerStartedChecking send: #connectionsManagerStartedChecking: to: self;
 		when: DBConnectionsManagerStoppedChecking send: #connectionsManagerStoppedChecking: to: self.
 	

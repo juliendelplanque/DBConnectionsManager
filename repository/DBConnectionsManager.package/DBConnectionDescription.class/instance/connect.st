@@ -5,4 +5,6 @@ connect
 	
 	self
 		hasAlreadyConnect: true;
-		wasDisconnectedByUser: false
+		wasDisconnectedByUser: false.
+		
+	self announcer announce: (DBConnectionWasConnectedByUser connectionDescription: self)
