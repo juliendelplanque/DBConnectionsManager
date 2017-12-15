@@ -1,4 +1,6 @@
 initialization
 initialize
 	super initialize.
-	self hasAlreadyConnect: false
+	self
+		hasAlreadyConnect: false;
+		wasDisconnectedByUser: false

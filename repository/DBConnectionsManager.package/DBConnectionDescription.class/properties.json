@@ -14,7 +14,9 @@
 		"password",
 		"connection",
 		"database",
-		"hasAlreadyConnect"
+		"hasAlreadyConnect",
+		"privateState",
+		"wasDisconnectedByUser"
 	],
 	"name" : "DBConnectionDescription",
 	"type" : "normal"

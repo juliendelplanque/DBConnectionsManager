@@ -4,4 +4,5 @@ disconnect
 		ifNotNil: #close.
 		
 	self
-		connection: nil
+		connection: nil;
+		wasDisconnectedByUser: true

@@ -1,6 +1,12 @@
 connections checking
 checkConnection: connectionDescription
 	| isAlive |
+	connectionDescription wasDisconnectedByUser
+		ifTrue: [
+			self announceConnectionDisconnectedByUser: connectionDescription.
+			wasAliveDict at: connectionDescription put: false.
+			^ self ].
+	
 	isAlive := connectionDescription isAlive.
 	
 	(isAlive not and: [ connectionDescription hasAlreadyConnect ])
