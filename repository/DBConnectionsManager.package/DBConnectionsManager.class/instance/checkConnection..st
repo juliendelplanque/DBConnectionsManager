@@ -3,7 +3,6 @@ checkConnection: connectionDescription
 	| isAlive |
 	connectionDescription wasDisconnectedByUser
 		ifTrue: [
-			self announceConnectionDisconnectedByUser: connectionDescription.
 			wasAliveDict at: connectionDescription put: false.
 			^ self ].
 	

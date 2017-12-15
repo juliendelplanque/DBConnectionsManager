@@ -5,4 +5,6 @@ disconnect
 		
 	self
 		connection: nil;
-		wasDisconnectedByUser: true
+		wasDisconnectedByUser: true.
+		
+	self announcer announce: (DBConnectionWasDisconnectedByUser connectionDescription: self)

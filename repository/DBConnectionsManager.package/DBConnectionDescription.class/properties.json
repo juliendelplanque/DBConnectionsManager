@@ -16,7 +16,8 @@
 		"database",
 		"hasAlreadyConnect",
 		"privateState",
-		"wasDisconnectedByUser"
+		"wasDisconnectedByUser",
+		"announcer"
 	],
 	"name" : "DBConnectionDescription",
 	"type" : "normal"
