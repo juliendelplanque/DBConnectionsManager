@@ -13,7 +13,8 @@
 		"userName",
 		"password",
 		"connection",
-		"database"
+		"database",
+		"hasAlreadyConnect"
 	],
 	"name" : "DBConnectionDescription",
 	"type" : "normal"
