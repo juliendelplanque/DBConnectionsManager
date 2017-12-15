@@ -1,0 +1,6 @@
+announcement handling
+connectionWasDisconnectedByUser: aDBConnectionWasDisconnectedByUser
+	aDBConnectionWasDisconnectedByUser connectionDescription
+		beUnknown.
+		
+	self connectionDescriptionsList refreshListItems

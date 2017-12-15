@@ -27,6 +27,6 @@
 		"connectionNameInput",
 		"testConnectionButton"
 	],
-	"name" : "DBConnectionWidget",
+	"name" : "DBConnectionDescriptionWidget",
 	"type" : "normal"
 }

@@ -1,0 +1,4 @@
+announcement handling
+descriptionAdded: aDBConnectionDescriptionAdded
+	connectionDescriptionsList
+		items: aDBConnectionDescriptionAdded connectionsManager connections

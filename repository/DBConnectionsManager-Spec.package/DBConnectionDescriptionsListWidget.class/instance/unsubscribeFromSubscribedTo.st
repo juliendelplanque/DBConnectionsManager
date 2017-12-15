@@ -1,0 +1,3 @@
+private
+unsubscribeFromSubscribedTo
+	subscribedTo unsubscribe: self

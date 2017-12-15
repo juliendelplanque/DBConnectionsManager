@@ -1,0 +1,2 @@
+announcement handling
+connectionsManagerStoppedChecking: aDBConnectionsManagerStoppedChecking

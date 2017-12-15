@@ -1,0 +1,4 @@
+announcement handling
+descriptionRemoved: aDBConnectionDescriptionRemoved
+	connectionDescriptionsList
+		items: aDBConnectionDescriptionRemoved connectionsManager connections
