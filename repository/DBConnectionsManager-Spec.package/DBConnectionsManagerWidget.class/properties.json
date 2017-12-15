@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "DBConnectionsManager-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DBConnectionsManagerWidget",
+	"type" : "normal"
+}

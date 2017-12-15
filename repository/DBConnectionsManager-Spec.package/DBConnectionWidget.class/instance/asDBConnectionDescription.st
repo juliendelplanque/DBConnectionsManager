@@ -1,5 +1,7 @@
 public api
 asDBConnectionDescription
+	self checkInputsMatchRegexes.
+	
 	^ (DBConnectionDescription for: DBPostgreSQLDBMS new)
 		name: self connectionName;
 		hostname: self hostname;

@@ -1,3 +1,3 @@
 accessing connections
 aliveConnections
-	^ self connections select: #isAlive
+	^ self connectionsSelect: #isAlive
