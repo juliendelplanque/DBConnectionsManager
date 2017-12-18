@@ -1,4 +1,4 @@
-list menu actions
+list menu
 removeSelectedConnection
 	| toRemove |
 	toRemove := self connectionDescriptionsList selectedConnectionDescription.
