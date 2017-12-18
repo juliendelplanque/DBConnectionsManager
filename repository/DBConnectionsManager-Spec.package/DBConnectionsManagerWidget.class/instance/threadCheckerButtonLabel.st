@@ -1,5 +1,5 @@
 thread checker
 threadCheckerButtonLabel
 	^ connectionsManager isCheckingConnections
-		ifTrue: [ 'Stop checking' ]
-		ifFalse: [ 'Start checking' ]
+		ifTrue: [ 'Checker is running, click to stop' ]
+		ifFalse: [ 'Checker is not running, click to start' ]
