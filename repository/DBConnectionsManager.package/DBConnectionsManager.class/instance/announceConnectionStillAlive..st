@@ -1,3 +1,0 @@
-announcing
-announceConnectionStillAlive: aDBConnectionDescription
-	self announce: (DBConnectionStillAlive connectionDescription: aDBConnectionDescription)

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "JulienDelplanque 12/14/2017 13:04",
-	"super" : "DBConnectionDescriptionAnnouncement",
+	"super" : "DBConnectionDescriptionAnnouncementWithTestResult",
 	"category" : "DBConnectionsManager-Announcements",
 	"classinstvars" : [ ],
 	"pools" : [ ],

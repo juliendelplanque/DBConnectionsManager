@@ -1,3 +1,0 @@
-announcing
-announceConnectionDied: aDBConnectionDescription
-	self announce: (DBConnectionDied connectionDescription: aDBConnectionDescription)

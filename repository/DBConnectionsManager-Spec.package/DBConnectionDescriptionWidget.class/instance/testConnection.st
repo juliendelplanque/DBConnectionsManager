@@ -2,7 +2,7 @@ public api
 testConnection
 	[ self asDBConnectionDescription
 		connect;
-		isAlive;
+		test;
 		disconnect
 	] on: Error do: [ :error | UIManager default alert: error messageText title: 'Connection test failed.'. ^ self ].
 

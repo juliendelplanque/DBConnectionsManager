@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "DBConnectionsManager-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"startTime",
+		"endTime",
+		"isAlive"
+	],
+	"name" : "DBConnectionTestResult",
+	"type" : "normal"
+}
