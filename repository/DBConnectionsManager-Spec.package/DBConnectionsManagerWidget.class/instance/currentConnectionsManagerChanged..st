@@ -1,0 +1,5 @@
+announcement handling
+currentConnectionsManagerChanged: aDBCurrentConnectionsManagerChanged
+	aDBCurrentConnectionsManagerChanged oldConnectionManager announcer
+		unsubscribe: self.
+	self adaptToConnectionsManager: aDBCurrentConnectionsManagerChanged connectionsManager

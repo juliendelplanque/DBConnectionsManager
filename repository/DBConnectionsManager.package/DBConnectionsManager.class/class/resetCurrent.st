@@ -1,3 +1,4 @@
 reset
 resetCurrent
-	^ current := DBConnectionsManager new
+	self current: self new.
+	^ current

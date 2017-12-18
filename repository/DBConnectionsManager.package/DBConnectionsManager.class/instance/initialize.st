@@ -5,4 +5,5 @@ initialize
 		connections: OrderedCollection new;
 		sleepTime: self defaultSleepTime.
 		
-	wasAliveDict := Dictionary new
+	wasAliveDict := Dictionary new.
+	shouldContinueConnectionsChecking := false
