@@ -4,4 +4,6 @@ initializeWidgets
 	
 	connectionDescriptionsList := self instantiate: DBConnectionDescriptionsListWidget.
 	
-	connectionDescriptionEditor := self instantiate: DBConnectionDescriptionWidget
+	connectionDescriptionEditor := self instantiate: DBConnectionDescriptionWidget.
+	
+	threadCheckerButton := self newButton

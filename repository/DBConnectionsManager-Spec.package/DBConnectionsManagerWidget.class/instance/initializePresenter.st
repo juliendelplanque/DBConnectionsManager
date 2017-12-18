@@ -4,4 +4,5 @@ initializePresenter
 	self
 		initializeConnectionButton;
 		initializeConnectionDescriptionsList;
-		initializeConnectionDescriptionEditor
+		initializeConnectionDescriptionEditor;
+		initializeThreadCheckerButton

@@ -6,5 +6,7 @@ defaultSpec
 				newColumn: [ :leftColumn |
 					leftColumn
 						newRow: #newConnectionButton height: self buttonHeight;
-						newRow: #connectionDescriptionsList ];
+						newRow: #connectionDescriptionsList;
+						newRow: #threadCheckerButton height: self buttonHeight ];
+				addSplitter;
 				newColumn: #connectionDescriptionEditor ]
