@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "JulienDelplanque 12/18/2017 15:50",
 	"super" : "ComposableModel",
 	"category" : "DBConnectionsManager-Spec",
 	"classinstvars" : [ ],
