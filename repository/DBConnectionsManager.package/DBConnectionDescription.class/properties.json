@@ -13,7 +13,6 @@
 		"userName",
 		"password",
 		"connection",
-		"database",
 		"hasAlreadyConnect",
 		"privateState",
 		"wasDisconnectedByUser",
