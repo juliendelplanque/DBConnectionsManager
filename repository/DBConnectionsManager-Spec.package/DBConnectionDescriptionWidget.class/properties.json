@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "JulienDelplanque 12/14/2017 15:09",
 	"super" : "ComposableModel",
-	"category" : "DBConnectionsManager-Spec",
+	"category" : "DBConnectionsManager-Spec-Widgets",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

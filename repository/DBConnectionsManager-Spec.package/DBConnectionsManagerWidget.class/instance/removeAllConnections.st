@@ -1,3 +1,5 @@
 list menu
 removeAllConnections
-	connectionsManager removeAll
+	DBRemoveAllCommand new
+		connectionsManagerWidget: self;
+		execute

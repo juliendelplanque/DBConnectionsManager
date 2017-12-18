@@ -1,6 +1,5 @@
 list menu
 removeSelectedConnection
-	| toRemove |
-	toRemove := self connectionDescriptionsList selectedConnectionDescription.
-	self connectionDescriptionsList unselectConnectionDescription.
-	connectionsManager remove: toRemove
+	DBRemoveSelectedCommand new
+		connectionsManagerWidget: self;
+		execute

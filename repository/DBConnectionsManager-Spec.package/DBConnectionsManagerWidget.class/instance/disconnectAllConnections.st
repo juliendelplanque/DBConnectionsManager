@@ -1,3 +1,5 @@
 list menu
 disconnectAllConnections
-	connectionsManager disconnectAll
+	DBDisconnectAllCommand new
+		connectionsManagerWidget: self;
+		execute

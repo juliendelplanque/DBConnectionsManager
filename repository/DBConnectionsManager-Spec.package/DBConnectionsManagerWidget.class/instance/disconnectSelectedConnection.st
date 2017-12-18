@@ -1,4 +1,5 @@
 list menu
 disconnectSelectedConnection
-	self connectionDescriptionsList selectedConnectionDescription
-		disconnect
+	DBDisconnectSelectedCommand new
+		connectionsManagerWidget: self;
+		execute

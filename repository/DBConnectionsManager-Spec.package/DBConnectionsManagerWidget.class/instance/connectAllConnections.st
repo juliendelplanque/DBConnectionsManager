@@ -1,3 +1,5 @@
 list menu
 connectAllConnections
-	connectionsManager connectAll
+	DBConnectAllCommand new
+		connectionsManagerWidget: self;
+		execute

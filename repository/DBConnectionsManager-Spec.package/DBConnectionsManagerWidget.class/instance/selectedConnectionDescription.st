@@ -1,0 +1,3 @@
+accessing
+selectedConnectionDescription
+	^ self connectionDescriptionsList selectedConnectionDescription

@@ -1,0 +1,3 @@
+accessing
+connectionsManager
+	^ self connectionsManagerWidget connectionsManager

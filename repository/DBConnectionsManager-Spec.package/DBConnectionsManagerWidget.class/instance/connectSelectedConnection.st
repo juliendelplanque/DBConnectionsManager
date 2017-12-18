@@ -1,4 +1,5 @@
 list menu
 connectSelectedConnection
-	self connectionDescriptionsList selectedConnectionDescription
-		connect
+	DBConnectSelectedCommand new
+		connectionsManagerWidget: self;
+		execute
