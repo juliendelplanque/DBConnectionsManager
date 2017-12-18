@@ -19,5 +19,8 @@ checkConnection: connectionDescription
 	
 	(isAlive not and: [ self wasAlive: connectionDescription ])
 		ifTrue: [ self announceConnectionDied: connectionDescription ].
+		
+	(isAlive and: [ self wasAlive: connectionDescription ])
+		ifTrue: [ self announceConnectionStillAlive: connectionDescription ].
 	
 	wasAliveDict at: connectionDescription put: isAlive

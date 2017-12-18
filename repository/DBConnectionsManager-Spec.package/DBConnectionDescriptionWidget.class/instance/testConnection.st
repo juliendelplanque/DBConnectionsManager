@@ -6,4 +6,4 @@ testConnection
 		disconnect
 	] on: Error do: [ :error | UIManager default alert: error messageText title: 'Connection test failed.'. ^ self ].
 
-	UIManager default inform: 'Connection works perfectly.'
+	UIManager default proceed: 'Connection works perfectly.' title: 'Connection test result'
