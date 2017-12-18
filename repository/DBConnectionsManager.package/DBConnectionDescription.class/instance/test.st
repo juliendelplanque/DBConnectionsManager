@@ -13,6 +13,7 @@ test
 	 ] on: Error do: [ 
 		^ DBConnectionTestResult new
 			startTime: startTime;
+			endTime: DateAndTime now;
 			isAlive: false;
 			yourself
 	].
