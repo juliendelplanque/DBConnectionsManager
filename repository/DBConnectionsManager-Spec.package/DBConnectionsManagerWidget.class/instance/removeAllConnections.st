@@ -1,0 +1,3 @@
+list menu actions
+removeAllConnections
+	connectionsManager removeAll

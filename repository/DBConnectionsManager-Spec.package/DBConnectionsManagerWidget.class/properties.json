@@ -9,6 +9,7 @@
 		"newConnectionButton",
 		"connectionDescriptionsList",
 		"connectionDescriptionEditor",
+		"threadCheckerButton",
 		"connectionsManager"
 	],
 	"name" : "DBConnectionsManagerWidget",
