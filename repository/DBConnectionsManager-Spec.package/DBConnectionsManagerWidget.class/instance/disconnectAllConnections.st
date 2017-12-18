@@ -1,0 +1,3 @@
+list menu actions
+disconnectAllConnections
+	connectionsManager disconnectAll

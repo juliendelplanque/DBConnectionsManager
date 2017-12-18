@@ -1,0 +1,3 @@
+list menu actions
+connectAllConnections
+	connectionsManager connectAll

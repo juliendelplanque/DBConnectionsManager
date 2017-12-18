@@ -20,6 +20,7 @@ initializeConnectionDescriptionsList
 							selector: #disconnectSelectedConnection;
 						add: 'Remove' target: self selector: #removeSelectedConnection ].
 			builder
-				add: 'Remove all'
-				target: self
-				selector: #removeAllConnections ]
+				addLine;
+				add: 'Connect all' target: self selector: #connectAllConnections;
+				add: 'Disconnect all' target: self selector: #disconnectAllConnections;
+				add: 'Remove all' target: self selector: #removeAllConnections ]
