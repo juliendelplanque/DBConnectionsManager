@@ -1,3 +1,3 @@
 accessing
 dbms: anObject
-	database := anObject
+	dbms := anObject

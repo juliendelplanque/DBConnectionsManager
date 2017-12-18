@@ -1,3 +1,3 @@
 accessing
 dbms
-	^ database
+	^ dbms

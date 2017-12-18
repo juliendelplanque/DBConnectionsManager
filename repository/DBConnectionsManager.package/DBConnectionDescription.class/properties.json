@@ -13,11 +13,11 @@
 		"userName",
 		"password",
 		"connection",
-		"database",
 		"hasAlreadyConnect",
 		"privateState",
 		"wasDisconnectedByUser",
-		"announcer"
+		"announcer",
+		"dbms"
 	],
 	"name" : "DBConnectionDescription",
 	"type" : "normal"
