@@ -1,0 +1,1 @@
+I serialize DBConnectionDescriptions in JSON format.
