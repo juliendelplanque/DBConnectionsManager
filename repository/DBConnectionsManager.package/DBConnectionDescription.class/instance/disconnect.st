@@ -1,8 +1,9 @@
 api
 disconnect
-	self connection
-		ifNotNil: #close.
-		
+	(self connection isNotNil and: [ self connection isConnected ])
+		ifFalse: [ ^ self ].
+	
+	self connection close.
 	self
 		connection: nil;
 		wasDisconnectedByUser: true.
