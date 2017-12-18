@@ -1,8 +1,8 @@
 menu
 menuOn: aBuilder
 	<worldMenu>
-	(aBuilder item: #'DB connections manager')
-		iconName: #testGreen;
+	(aBuilder item: #'DB Connections Manager')
+		iconName: #glamorousThrough;
 		parent: #DBTools;
 		action: [ 
 			self new
