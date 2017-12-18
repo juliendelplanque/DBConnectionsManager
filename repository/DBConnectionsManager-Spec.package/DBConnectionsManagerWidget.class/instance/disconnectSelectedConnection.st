@@ -1,0 +1,4 @@
+list menu actions
+disconnectSelectedConnection
+	self connectionDescriptionsList selectedConnectionDescription
+		disconnect

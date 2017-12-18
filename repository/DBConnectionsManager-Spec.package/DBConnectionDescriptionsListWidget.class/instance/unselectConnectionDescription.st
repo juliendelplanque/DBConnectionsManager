@@ -1,0 +1,3 @@
+api
+unselectConnectionDescription
+	self connectionDescriptionsList resetSelection

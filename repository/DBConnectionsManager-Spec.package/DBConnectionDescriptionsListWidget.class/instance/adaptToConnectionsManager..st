@@ -3,9 +3,9 @@ adaptToConnectionsManager: aDBConnectionsManager
 	subscribedTo ifNotNil: [ 
 		self unsubscribeFromSubscribedTo ].
 
-	subscribedTo := aDBConnectionsManager announcer.
+	subscribedTo := aDBConnectionsManager.
 	
-	subscribedTo
+	subscribedTo announcer
 		when: DBConnectionDescriptionAdded send: #descriptionAdded: to: self;
 		when: DBConnectionDescriptionRemoved send: #descriptionRemoved: to: self;
 		when: DBConnectionDied send: #connectionDied: to: self;

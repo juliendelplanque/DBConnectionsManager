@@ -1,0 +1,4 @@
+list menu actions
+connectSelectedConnection
+	self connectionDescriptionsList selectedConnectionDescription
+		connect

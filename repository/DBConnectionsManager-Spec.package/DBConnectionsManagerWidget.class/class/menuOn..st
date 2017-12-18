@@ -4,6 +4,9 @@ menuOn: aBuilder
 	(aBuilder item: #'DB connections manager')
 		iconName: #testGreen;
 		parent: #DBTools;
-		action: [ self error: 'Should open DBConnectionsManagerWidget' ].
+		action: [ 
+			self new
+				adaptToConnectionsManager: DBConnectionsManager current;
+				openWithSpec ].
 		
 	aBuilder withSeparatorAfter

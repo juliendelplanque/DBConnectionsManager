@@ -1,3 +1,3 @@
 private
 unsubscribeFromSubscribedTo
-	subscribedTo unsubscribe: self
+	subscribedTo announcer unsubscribe: self

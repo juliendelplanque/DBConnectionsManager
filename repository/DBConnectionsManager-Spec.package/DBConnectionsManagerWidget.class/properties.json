@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"newConnectionButton",
+		"connectionDescriptionsList",
+		"connectionDescriptionEditor",
+		"connectionsManager"
+	],
 	"name" : "DBConnectionsManagerWidget",
 	"type" : "normal"
 }
