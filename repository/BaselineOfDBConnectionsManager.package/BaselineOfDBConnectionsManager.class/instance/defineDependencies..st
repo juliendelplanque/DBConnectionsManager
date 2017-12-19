@@ -6,4 +6,6 @@ defineDependencies: spec
 				className: 'ConfigurationOfGarage';
 				version: #stable;
 				repository: 'http://smalltalkhub.com/mc/DBXTalk/Garage/main';
-				loads: #('postgresV2') ]
+				loads: #('postgresV2') ];
+		baseline: 'FileDialog' with: [ 
+			spec repository: 'github://peteruhnak/file-dialog/repository' ]
