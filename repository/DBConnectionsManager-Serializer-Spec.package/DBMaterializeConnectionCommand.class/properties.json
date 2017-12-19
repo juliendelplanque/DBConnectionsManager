@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "DBConnectionsManagerWidgetCommand",
+	"category" : "DBConnectionsManager-Serializer-Spec",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DBMaterializeConnectionCommand",
+	"type" : "normal"
+}
