@@ -1,3 +1,3 @@
 testing
 isExtensionCommand
-	^ true
+	^ false
