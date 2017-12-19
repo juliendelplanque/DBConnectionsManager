@@ -1,0 +1,3 @@
+subclasses access
+subclassesForSingleConnection
+	^ DBConnectionsManagerWidgetCommand subclasses select: #isForSingleConnection

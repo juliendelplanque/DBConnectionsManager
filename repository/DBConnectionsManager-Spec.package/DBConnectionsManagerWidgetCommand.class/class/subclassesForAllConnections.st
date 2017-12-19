@@ -1,0 +1,3 @@
+subclasses access
+subclassesForAllConnections
+	^ DBConnectionsManagerWidgetCommand subclasses select: #isForAllConnections
