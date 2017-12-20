@@ -3,7 +3,7 @@ menuOn: aBuilder
 	<worldMenu>
 	(aBuilder item: #'DB Connections Manager')
 		iconName: #glamorousThrough;
-		parent: #DBTools;
+		parent: #'MooSQL';
 		action: [ 
 			self new
 				adaptToConnectionsManager: DBConnectionsManager current;
