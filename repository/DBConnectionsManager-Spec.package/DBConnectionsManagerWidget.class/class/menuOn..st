@@ -7,6 +7,4 @@ menuOn: aBuilder
 		action: [ 
 			self new
 				adaptToConnectionsManager: DBConnectionsManager current;
-				openWithSpec ].
-		
-	aBuilder withSeparatorAfter
+				openWithSpec ]
