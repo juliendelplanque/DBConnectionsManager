@@ -23,7 +23,7 @@ DBConnectionsManagerWidget openOnCurrent
 
 ![Connections manager new connection](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/ConnectionDescription.png)
 
-![Connection test](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/ConnectionDescription2.png | width=400)
+![Connection test](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/ConnectionDescription2.png =x400)
 
 ![Connection connect](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager1.png)
 
