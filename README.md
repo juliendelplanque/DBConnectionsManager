@@ -36,23 +36,42 @@ If you get a popup saying that 'Connection works perfectly.', your configuration
 good and you can click 'Ok' to create the connection description and to add it to
 the connections manager.
 
-![Connection connect](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager1.png)
-
 Once it is done, you can right-click on the connection description appearing in the
 list. A menu appears allowing you to connect the connection description.
 
-![Connection not checked](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager2.png)
+![Connection connect](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager1.png)
 
 Once you connected the connection description, the icon turns yellow meaning that it
 hasn't been checked by the connections checker yet.
 
-![Connection not checked](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager3.png)
+![Connection not checked](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager2.png)
 
 Once the connection checker tested the connection description, the icon turns green.
 Til the icon stays green, you know your connection to the database works perfectly.
 
-![Connection not checked](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager4.png)
+![Connection green](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager3.png)
 
+If a problem appears on your connection (e.g. the DBMS stops working, the server
+is not reachable anymore, etc...), the icon will turn red.
 
-![Connection not checked](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager5.png)
+![Connection red](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager4.png)
 
+If you right click on the connection list, you get a list of actions. The first
+set of actions concern the connection selected and will only appear if a connection
+is selected in the list. The second set concerns actions to apply on all connections
+or actions that do not require a connection to be selected.
+
+![Connection actions](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager5.png)
+
+### Store your connection descriptions on the disk
+The ConnectionsManager lets you store your connection descriptions on the disk
+for latter reuse. To save a connection description, left click on one of the
+connection in the list and select 'Save on disk...' action. It will open a
+file dialog allowing to select the location of the file that will store the
+connection description serialized in JSON format.
+
+To load a connection description previously stored on the disk, left click
+on the connections list and select 'Load from disk...' action. This action will
+let you select a JSON file containing a connection description serialized. Once
+selected, confirm your choice in the file dialog and the connection description
+will be loaded and added to the list of connection descriptions.
