@@ -22,7 +22,11 @@ DBConnectionsManagerWidget openOnCurrent
 Which leads to the following widget open:
 ![Connections manager empty](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager.png)
 
-First, you need to create a new connection description. To do so, click on the
+First, turn on the connections checker by clicking on the dedicated. This will
+start a thread that regularly checks the state of the connections added to
+`DBConnectionsManager current`.
+
+Then, you need to create a new connection description. To do so, click on the
 'New connection' button. You get a widget with a form to fill.
 
 ![Connections manager new connection](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/ConnectionDescription.png)
@@ -64,7 +68,7 @@ or actions that do not require a connection to be selected.
 ![Connection actions](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBConnectionsManager5.png)
 
 ### Store your connection descriptions on the disk
-The ConnectionsManager lets you store your connection descriptions on the disk
+The `ConnectionsManager` lets you store your connection descriptions on the disk
 for latter reuse. To save a connection description, left click on one of the
 connection in the list and select 'Save on disk...' action. It will open a
 file dialog allowing to select the location of the file that will store the
@@ -75,3 +79,31 @@ on the connections list and select 'Load from disk...' action. This action will
 let you select a JSON file containing a connection description serialized. Once
 selected, confirm your choice in the file dialog and the connection description
 will be loaded and added to the list of connection descriptions.
+
+## Listen to announcements
+The `ConnectionsManager` provide an `#announcer` which can be used to perform
+actions when something happened to a connection.
+
+For now, the `ConnectionsManager` create the following announcements:
+
+- `DBConnectionDescriptionAdded`: created when a connection description has been added to its list of connections.
+- `DBConnectionDescriptionRemoved`: created when a connection description has been removed from its list of connections.
+- `DBConnectionDied`: created when a connection that was alive died.
+- `DBConnectionRevive`: created when a connection that was dead is alive again.
+- `DBConnectionStillAlive`: created when a connection was alive and continue to be alive.
+- `DBConnectionWasConnectedByUser`: created when a connection connected by the user (so, on purpose).
+- `DBConnectionWasDisconnectedByUser`: created when a connection was disconnected by the user (so, on purpose).
+- `DBConnectionsManagerStartedChecking`: created when it started its thread that check connections.
+- `DBConnectionsManagerStoppedChecking`: created when it stopped its thread that check connections.
+- `DBCurrentConnectionsManagerChanged`: created when the `#current` class-side instance variable of DBConnectionsManager is modified.
+
+For example to log when a connection dies in the transcript, one can simply
+write:
+
+```
+DBConnectionsManager current announcer when: DBConnectionDied do: [ :ann |
+	Transcript
+		show: ann connectionDescription name;
+		show: ' just died :-(.';
+		cr ]
+```
