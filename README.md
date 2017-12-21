@@ -80,6 +80,23 @@ let you select a JSON file containing a connection description serialized. Once
 selected, confirm your choice in the file dialog and the connection description
 will be loaded and added to the list of connection descriptions.
 
+## Integrate the connection descriptions list in your Spec's widgets
+The `DBConnectionDescriptionsListWidget` can be integrated in other UI widgets
+in order to let the user manipulate connection descriptions easily.
+
+To instantiate such widget, you simply need to use its `#adaptToConnectionsManager:`
+message to adapt it to an instance of `DBConnectionsManager` (listen to announcements,
+etc...).
+
+Once you're done with this widget, use its `#unsubscribeFromSubscribedTo` to
+make it stop listening to the `DBConnectionsManager` instance provided
+previously.
+
+As an example, the [`DBPlayground`](https://github.com/juliendelplanque/DBPlayground)
+uses this widget as a subwidget:
+
+![DBPlayground](https://raw.githubusercontent.com/juliendelplanque/DBConnectionsManager/master/screenshots/DBPlayground.png)
+
 ## Listen to announcements
 The `ConnectionsManager` provide an `#announcer` which can be used to perform
 actions when something happened to a connection.
