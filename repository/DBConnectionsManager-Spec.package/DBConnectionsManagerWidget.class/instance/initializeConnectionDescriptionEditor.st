@@ -11,5 +11,6 @@ initializeConnectionDescriptionEditor
 				do: [ "Ignore, we just want to be sure it is disconnected." ].
 			editor adaptToMyself: connectionDescription ];
 		cancelButtonAction: [ :editor | 
-			editor
-				fillFieldsFrom: self connectionDescriptionsList selectedConnectionDescription ]
+			self connectionDescriptionsList selectedConnectionDescription ifNotNil: [ :selected |
+				editor
+					fillFieldsFrom: selected ] ]
