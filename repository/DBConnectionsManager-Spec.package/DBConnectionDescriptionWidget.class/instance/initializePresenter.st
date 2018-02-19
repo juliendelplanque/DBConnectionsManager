@@ -3,33 +3,39 @@ initializePresenter
 	connectionNameLabel
 		label: 'Connection name:'.
 	connectionNameInput
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'my_connection'.
 	
 	hostnameLabel
 		label: 'Hostname:'.
 	hostnameTextInput
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'ip address/localhost/...'.
 	
 	portLabel
 		label: 'Port:'.
 	portTextInput 
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'Port number e.g. 5432'.
 	
 	databaseLabel
 		label: 'Database:'.
 	databaseTextInput
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'my_database'.
 	
 	userLabel
 		label: 'User:'.
 	userTextInput
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'DBMS username'.
 	
 	passwordLabel
 		label: 'Password:'.
 	passwordTextInput
 		beEncrypted
-		autoAccept: true.
+		autoAccept: true;
+		ghostText: 'DBMS username''s password'.
 		
 	okButton
 		label: 'Ok'.

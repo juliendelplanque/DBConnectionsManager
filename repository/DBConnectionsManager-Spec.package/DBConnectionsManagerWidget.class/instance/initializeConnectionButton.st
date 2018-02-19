@@ -6,4 +6,5 @@ initializeConnectionButton
 				okButtonAction: [ :widget | 
 					connectionsManager add: widget asDBConnectionDescription.
 					widget window close ];
+				beForNewConnection;
 				openWithSpec ]

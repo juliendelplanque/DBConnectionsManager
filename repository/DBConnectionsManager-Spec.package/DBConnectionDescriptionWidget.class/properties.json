@@ -2,7 +2,10 @@
 	"commentStamp" : "JulienDelplanque 12/14/2017 15:09",
 	"super" : "ComposableModel",
 	"category" : "DBConnectionsManager-Spec-Widgets",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"defaultHostname",
+		"defaultPort"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
