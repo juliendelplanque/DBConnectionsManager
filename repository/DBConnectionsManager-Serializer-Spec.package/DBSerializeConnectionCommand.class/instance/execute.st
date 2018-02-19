@@ -5,6 +5,7 @@ execute
 					extensionFilters: {
 						'JSON file' -> #(json).
 					};
+					selectFile: FileLocator home / (self connectionsManagerWidget selectedConnectionDescription name , '.json')
 					yourself.
 	fileReference := dialog openModal.
 	fileReference ifNil: [ ^ self ]. "User cancelled."
