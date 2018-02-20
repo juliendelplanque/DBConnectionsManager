@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "DBConnectionsManagerWidgetCommand",
+	"category" : "DBConnectionsManager-Spec-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DBSortAlphabeticallyCommand",
+	"type" : "normal"
+}
