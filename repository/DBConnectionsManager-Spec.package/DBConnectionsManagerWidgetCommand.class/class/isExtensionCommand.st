@@ -1,3 +1,0 @@
-testing
-isExtensionCommand
-	^ true
