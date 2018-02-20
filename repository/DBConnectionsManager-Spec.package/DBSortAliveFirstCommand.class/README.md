@@ -1,0 +1,1 @@
+I sort the connection list alphabetically showing alive connections first.

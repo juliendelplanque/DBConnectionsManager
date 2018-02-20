@@ -1,0 +1,1 @@
+Connects the connection selected in the connections manager.

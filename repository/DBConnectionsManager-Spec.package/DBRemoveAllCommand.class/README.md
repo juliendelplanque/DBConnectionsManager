@@ -1,0 +1,1 @@
+Removes all the connections of the connections manager.
