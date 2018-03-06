@@ -7,10 +7,12 @@ adaptToConnectionsManager: aDBConnectionsManager
 	
 	self threadCheckerButton
 		label: self threadCheckerButtonLabel;
+		icon: self threadCheckerButtonIcon;
 		action: [	
 			self toggleThreadCheckerState.
 			self threadCheckerButton
-				label: self threadCheckerButtonLabel ].
+				label: self threadCheckerButtonLabel;
+				icon: self threadCheckerButtonIcon ].
 	 
 	self connectionDescriptionsList
 		adaptToConnectionsManager: aDBConnectionsManager.
