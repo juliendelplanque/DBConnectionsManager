@@ -1,0 +1,1 @@
+Copy the name of the connection selected in the clipboard.
