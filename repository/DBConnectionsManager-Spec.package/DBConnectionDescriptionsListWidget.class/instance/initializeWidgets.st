@@ -1,3 +1,3 @@
 initialization
 initializeWidgets
-	connectionDescriptionsList := self newIconList
+	connectionDescriptionsList := self instantiate: FastTableModel
