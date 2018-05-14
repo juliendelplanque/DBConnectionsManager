@@ -3,7 +3,7 @@ connect
 	(self connection isNotNil and: [ self connection isConnected ])
 		ifTrue: [ ^ self ].
 	
-	connection := GADriver fromConnectionString: self connectionUrl.
+	connection := self dbms buildConnectionFrom: self.
 	connection dbcmConnect.
 	
 	self
