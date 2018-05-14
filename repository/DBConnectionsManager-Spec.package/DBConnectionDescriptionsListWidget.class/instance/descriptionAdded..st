@@ -1,4 +1,5 @@
 announcement handling
 descriptionAdded: aDBConnectionDescriptionAdded
 	connectionDescriptionsList
-		items: aDBConnectionDescriptionAdded connectionsManager connections
+		items: aDBConnectionDescriptionAdded connectionsManager connections.
+	self unselectConnectionDescription
