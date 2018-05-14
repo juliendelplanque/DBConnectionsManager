@@ -1,0 +1,3 @@
+accessing
+connectionBuildingSymbol: aBlockOrSymbol
+	ConnectionBuildingSymbol := aBlockOrSymbol

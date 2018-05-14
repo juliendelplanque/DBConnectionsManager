@@ -1,3 +1,3 @@
 connection building
 buildConnectionFrom: aDBConnectionDescription
-	^ GADriver fromConnectionString: (self buildGarageUrlFrom: aDBConnectionDescription)
+	^ self perform: self class connectionBuildingSymbol with: aDBConnectionDescription

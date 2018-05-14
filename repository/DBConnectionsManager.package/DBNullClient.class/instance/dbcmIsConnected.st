@@ -1,0 +1,3 @@
+dbc interface
+dbcmIsConnected
+	^ true

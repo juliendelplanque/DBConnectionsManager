@@ -1,13 +1,11 @@
 {
-	"commentStamp" : "JulienDelplanque 12/14/2017 14:34",
+	"commentStamp" : "JulienDelplanque 5/14/2018 20:42",
 	"super" : "Object",
 	"category" : "DBConnectionsManager-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"ConnectionBuildingSymbol"
-	],
+	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "DBDataBaseManagementSystem",
+	"name" : "DBNullClient",
 	"type" : "normal"
 }

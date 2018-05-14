@@ -1,0 +1,3 @@
+*DBConnectionsManager-Garage
+useGarageDriver
+	self connectionBuildingSymbol: #buildGarageConnectionFrom:

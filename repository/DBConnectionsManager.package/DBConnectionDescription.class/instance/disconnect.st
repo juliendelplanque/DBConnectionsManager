@@ -1,6 +1,6 @@
 api
 disconnect
-	(self connection isNotNil and: [ self connection isConnected ])
+	(self connection isNotNil and: [ self connection dbcmIsConnected ])
 		ifFalse: [ ^ self ].
 	
 	self connection dbcmDisconnect.
