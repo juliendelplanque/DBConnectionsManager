@@ -1,2 +1,4 @@
 announcement handling
 connectionsManagerStoppedChecking: aDBConnectionsManagerStoppedChecking
+	aDBConnectionsManagerStoppedChecking connectionsManager connections
+		do: #beUnknown
