@@ -4,4 +4,5 @@ baseline: spec
 	spec for: #'common' do: [
 		self
 			definePackages: spec;
-			defineDependencies: spec ]
+			defineDependencies: spec;
+			defineGroups: spec ]
