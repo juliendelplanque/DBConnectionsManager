@@ -4,7 +4,7 @@ connect
 		ifTrue: [ ^ self ].
 	
 	connection := GADriver fromConnectionString: self connectionUrl.
-	connection connect.
+	connection dbcmConnect.
 	
 	self
 		hasAlreadyConnect: true;

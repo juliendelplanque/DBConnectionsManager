@@ -3,7 +3,7 @@ disconnect
 	(self connection isNotNil and: [ self connection isConnected ])
 		ifFalse: [ ^ self ].
 	
-	self connection close.
+	self connection dbcmDisconnect.
 	self
 		connection: nil;
 		wasDisconnectedByUser: true.
