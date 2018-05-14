@@ -1,8 +1,8 @@
-url building
-buildUrlFrom: aDBConnectionDescription
+*DBConnectionsManager-Garage
+buildGarageUrlFrom: aDBConnectionDescription
 	^ String streamContents: [ :stream |
 		stream
-			<< self driverName;
+			<< self garageDriverName;
 			<< '://';
 			<< aDBConnectionDescription hostname;
 			<< $:;
