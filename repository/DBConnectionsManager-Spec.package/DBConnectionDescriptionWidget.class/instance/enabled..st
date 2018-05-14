@@ -12,4 +12,10 @@ enabled: aBoolean
 	
 	self portTextInput enabled: aBoolean.
 	
-	self dbmsDropList enabled: aBoolean
+	self dbmsDropList enabled: aBoolean.
+	
+	self testConnectionButton enabled: aBoolean.
+	
+	self cancelButton enabled: aBoolean.
+	
+	self okButton enabled: aBoolean
