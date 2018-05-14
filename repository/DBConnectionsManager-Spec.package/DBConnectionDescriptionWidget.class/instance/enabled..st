@@ -10,4 +10,6 @@ enabled: aBoolean
 	
 	self passwordTextInput enabled: aBoolean.
 	
-	self portTextInput enabled: aBoolean
+	self portTextInput enabled: aBoolean.
+	
+	self dbmsDropList enabled: aBoolean
