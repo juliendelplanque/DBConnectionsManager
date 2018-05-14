@@ -28,7 +28,9 @@
 		"passwordTextInputRegex",
 		"connectionNameLabel",
 		"connectionNameInput",
-		"testConnectionButton"
+		"testConnectionButton",
+		"dbmsDropList",
+		"dbmsDropListLabel"
 	],
 	"name" : "DBConnectionDescriptionWidget",
 	"type" : "normal"

@@ -37,6 +37,12 @@ initializePresenter
 		autoAccept: true;
 		ghostText: 'DBMS username''s password'.
 		
+	dbmsDropListLabel
+		label: 'DBMS:'.
+	dbmsDropList
+		items: (DBDataBaseManagementSystem subclasses sorted: [ :a :b | a dbmsName < b dbmsName ]);
+		displayBlock: [ :class | class dbmsName ].
+		
 	okButton
 		label: 'Ok'.
 		

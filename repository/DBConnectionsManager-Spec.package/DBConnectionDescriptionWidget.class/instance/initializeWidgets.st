@@ -18,6 +18,9 @@ initializeWidgets
 	passwordLabel := self newLabel.
 	passwordTextInput := self newTextInput.
 	
+	dbmsDropListLabel := self newLabel.
+	dbmsDropList := self newDropList.
+	
 	okButton := self newButton.
 	cancelButton := self newButton.
 	testConnectionButton := self newButton
