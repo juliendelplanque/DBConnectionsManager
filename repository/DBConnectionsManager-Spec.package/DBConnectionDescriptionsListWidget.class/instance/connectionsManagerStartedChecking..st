@@ -1,2 +1,0 @@
-announcement handling
-connectionsManagerStartedChecking: aDBConnectionsManagerStartedChecking

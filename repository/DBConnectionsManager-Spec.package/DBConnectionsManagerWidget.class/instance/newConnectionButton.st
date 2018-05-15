@@ -1,3 +1,0 @@
-accessing
-newConnectionButton
-	^ newConnectionButton

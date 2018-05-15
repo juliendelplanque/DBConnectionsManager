@@ -1,3 +1,0 @@
-execute
-execute
-	Clipboard default clipboardText: self connectionsManagerWidget selectedConnectionDescription name

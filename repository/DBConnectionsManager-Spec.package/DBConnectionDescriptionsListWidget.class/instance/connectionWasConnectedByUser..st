@@ -1,6 +1,0 @@
-announcement handling
-connectionWasConnectedByUser: aDBConnectionWasConnectedByUser
-	aDBConnectionWasConnectedByUser connectionDescription
-		beUnchecked.
-		
-	self connectionDescriptionsList refreshListItems

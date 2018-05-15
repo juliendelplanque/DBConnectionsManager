@@ -1,3 +1,0 @@
-connection building
-buildNullConnectionFrom: aDBConnectionDescription
-	^ DBNullClient new

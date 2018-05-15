@@ -1,1 +1,0 @@
-I describe a connection to a database.

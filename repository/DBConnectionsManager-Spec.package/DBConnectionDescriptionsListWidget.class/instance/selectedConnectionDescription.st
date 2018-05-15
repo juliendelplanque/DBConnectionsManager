@@ -1,3 +1,0 @@
-api
-selectedConnectionDescription
-	^ self connectionDescriptionsList selectedItem

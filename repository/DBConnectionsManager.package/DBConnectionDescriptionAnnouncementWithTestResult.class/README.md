@@ -1,1 +1,0 @@
-Same as my superclass but holding the result of a connection test as well..

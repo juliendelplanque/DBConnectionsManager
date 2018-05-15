@@ -1,1 +1,0 @@
-I am the announcement created by the DBConnectionsManager when a connection that was dead is alive again.

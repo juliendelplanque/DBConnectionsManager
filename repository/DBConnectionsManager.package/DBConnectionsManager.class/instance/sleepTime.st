@@ -1,3 +1,0 @@
-accessing
-sleepTime
-	^ sleepTime

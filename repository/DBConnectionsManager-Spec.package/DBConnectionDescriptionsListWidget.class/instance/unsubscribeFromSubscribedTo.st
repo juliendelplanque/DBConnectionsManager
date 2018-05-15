@@ -1,3 +1,0 @@
-private
-unsubscribeFromSubscribedTo
-	subscribedTo announcer unsubscribe: self

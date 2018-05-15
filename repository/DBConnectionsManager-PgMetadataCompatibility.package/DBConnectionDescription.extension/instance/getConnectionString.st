@@ -1,3 +1,0 @@
-*DBConnectionsManager-PgMetadataCompatibility
-getConnectionString
-	^ self connectionUrl

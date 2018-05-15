@@ -1,6 +1,0 @@
-announcement handling
-connectionRevive: aDBConnectionRevive
-
-	aDBConnectionRevive connectionDescription beAlive.
-	
-	self connectionDescriptionsList refreshListItems

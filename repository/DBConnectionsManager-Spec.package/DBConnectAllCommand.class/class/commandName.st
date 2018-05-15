@@ -1,3 +1,0 @@
-accessing
-commandName
-	^ 'Connect all'

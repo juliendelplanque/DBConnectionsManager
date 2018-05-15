@@ -1,1 +1,0 @@
-I am the announcement created by the DBConnectionsManager when it started its thread that check connections.
