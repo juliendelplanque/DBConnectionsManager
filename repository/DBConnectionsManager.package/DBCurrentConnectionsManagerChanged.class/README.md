@@ -1,1 +1,0 @@
-I am the announcement created by the DBConnectionsManager when the #current class-side instance variable of DBConnectionsManager is modified.

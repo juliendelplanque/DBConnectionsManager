@@ -1,1 +1,0 @@
-I provide the UI letting a user creating a DBConnectionDescription.

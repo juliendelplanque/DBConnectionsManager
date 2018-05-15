@@ -1,3 +1,0 @@
-accessing
-testConnectionButton
-	^ testConnectionButton

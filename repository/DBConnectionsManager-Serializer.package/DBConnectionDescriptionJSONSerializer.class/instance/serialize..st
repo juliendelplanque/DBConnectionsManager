@@ -1,3 +1,0 @@
-serializing
-serialize: aDBConnectionDescription
-	STONJSON put: aDBConnectionDescription asDictionaryForSerialization onStreamPretty: self writeStream

@@ -1,3 +1,0 @@
-announcing
-announceConnectionDisconnectedByUser: aDBConnectionDescription
-	self announce: (DBConnectionWasDisconnectedByUser connectionDescription: aDBConnectionDescription)

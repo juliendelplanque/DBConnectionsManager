@@ -1,3 +1,0 @@
-dbc interface
-dbcmIsConnected
-	^ true

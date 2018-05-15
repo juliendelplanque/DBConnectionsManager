@@ -1,1 +1,0 @@
-I am an abstract announcement related to the DBConnectionsManager about an event concerning one of the connectionDescription.

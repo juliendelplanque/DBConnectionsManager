@@ -1,3 +1,0 @@
-accessing
-commandName
-	^ 'Disconnect all'

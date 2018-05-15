@@ -1,3 +1,0 @@
-announcing
-announceConnectionDescriptionRemoved: aDBConnectionDescription
-	self announce: (DBConnectionDescriptionRemoved connectionDescription: aDBConnectionDescription)

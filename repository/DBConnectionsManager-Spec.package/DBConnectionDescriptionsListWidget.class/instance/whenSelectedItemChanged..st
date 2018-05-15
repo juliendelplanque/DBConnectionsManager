@@ -1,3 +1,0 @@
-api
-whenSelectedItemChanged: aBlock
-	self connectionDescriptionsList whenSelectedItemChanged: aBlock

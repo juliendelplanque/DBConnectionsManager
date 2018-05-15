@@ -1,3 +1,0 @@
-accessing
-defaultConnectionPort
-	^ self subclassResponsibility
