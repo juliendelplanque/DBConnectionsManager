@@ -1,1 +1,1 @@
-Package { #name : #DBConnectionsManager-PgMetadataCompatibility }
+Package { #name : #'DBConnectionsManager-PgMetadataCompatibility' }
