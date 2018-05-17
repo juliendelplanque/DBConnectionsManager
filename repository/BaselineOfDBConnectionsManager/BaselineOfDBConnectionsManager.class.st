@@ -32,19 +32,23 @@ BaselineOfDBConnectionsManager >> defineDependencies: spec [
 { #category : #baselines }
 BaselineOfDBConnectionsManager >> defineGroups: spec [
 	spec
-		group: 'driverless' with: #('DBConnectionsManager' 'DBConnectionsManager-Spec' 'DBConnectionsManager-Serializer' 'DBConnectionsManager-Serializer-Spec');
+		group: 'driverless'
+			with: #('DBConnectionsManager' 'DBConnectionsManager-Spec' 'DBConnectionsManager-Serializer' 'DBConnectionsManager-Serializer-Spec');
 		group: 'garage' with: #('driverless' 'DBConnectionsManager-Garage');
 		group: 'p3' with: #('driverless' 'DBConnectionsManager-P3');
-		group: 'default' with: #('p3')
+		group: 'default' with: #('p3');
+		group: 'pgmetadata' with: #('garage' 'DBConnectionsManager-PgMetadataCompatibility')
 ]
 
 { #category : #baselines }
 BaselineOfDBConnectionsManager >> definePackages: spec [
-	spec 
-		package: #'DBConnectionsManager';
+	spec
+		package: #DBConnectionsManager;
 		package: #'DBConnectionsManager-Garage' with: [ spec requires: #('DBConnectionsManager' 'Garage-PostgreSQL') ];
 		package: #'DBConnectionsManager-P3' with: [ spec requires: #('DBConnectionsManager' 'P3') ];
 		package: #'DBConnectionsManager-Spec' with: [ spec requires: #('DBConnectionsManager') ];
 		package: #'DBConnectionsManager-Serializer' with: [ spec requires: #('DBConnectionsManager') ];
-		package: #'DBConnectionsManager-Serializer-Spec' with: [ spec requires: #('DBConnectionsManager-Serializer' 'DBConnectionsManager-Spec' 'FileDialog') ]
+		package: #'DBConnectionsManager-Serializer-Spec'
+			with: [ spec requires: #('DBConnectionsManager-Serializer' 'DBConnectionsManager-Spec' 'FileDialog') ];
+		package: #'DBConnectionsManager-PgMetadataCompatibility' with: [ spec requires: #('DBConnectionsManager') ]
 ]
