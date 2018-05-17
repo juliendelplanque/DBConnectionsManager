@@ -26,5 +26,6 @@ DBDataBaseManagementSystem >> buildP3UrlFrom: aDBConnectionDescription [
 
 { #category : #'*DBConnectionsManager-P3' }
 DBDataBaseManagementSystem class >> useP3Driver [
-	self connectionBuildingSymbol: #buildP3ConnectionFrom:
+	<dbcmDriverSetter>
+	ConnectionBuildingSymbol := #buildP3ConnectionFrom:
 ]

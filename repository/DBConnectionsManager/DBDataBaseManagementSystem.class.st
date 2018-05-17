@@ -10,16 +10,17 @@ Class {
 	#category : #DBConnectionsManager-Core
 }
 
-{ #category : #accessing }
-DBDataBaseManagementSystem class >> connectionBuildingSymbol [
-	^ ConnectionBuildingSymbol ifNil: [ 
-		self useNullDriver.
-		ConnectionBuildingSymbol ]
+{ #category : #private }
+DBDataBaseManagementSystem class >> availableDriverSetters [
+	^ (Pragma allNamed: #dbcmDriverSetter in: DBDataBaseManagementSystem class)
+			collect: #methodSelector
 ]
 
 { #category : #accessing }
-DBDataBaseManagementSystem class >> connectionBuildingSymbol: aBlockOrSymbol [
-	ConnectionBuildingSymbol := aBlockOrSymbol
+DBDataBaseManagementSystem class >> connectionBuildingSymbol [
+	^ ConnectionBuildingSymbol ifNil: [ 
+		self useAnyAvailableDriverElseUseNullDriver.
+		ConnectionBuildingSymbol ]
 ]
 
 { #category : #accessing }
@@ -33,9 +34,19 @@ DBDataBaseManagementSystem class >> dbmsNamed: aString [
 	^ (DBDataBaseManagementSystem subclasses detect: [ :c | c dbmsName = aString ]) new
 ]
 
+{ #category : #'driver setting' }
+DBDataBaseManagementSystem class >> useAnyAvailableDriverElseUseNullDriver [
+	"If there is any method in this class that has the pragma <dbcmDriverSetter>, call it to set the #ConnectionBuildingSymbol class variable.
+	Else, call useNullDriver.
+	"
+	self availableDriverSetters
+		ifEmpty: [ self useNullDriver ]
+		ifNotEmpty: [ :selectors | selectors anyOne value: self ]
+]
+
 { #category : #'null driver' }
 DBDataBaseManagementSystem class >> useNullDriver [
-	self connectionBuildingSymbol: #buildNullConnectionFrom:
+	ConnectionBuildingSymbol := #buildNullConnectionFrom:
 ]
 
 { #category : #'connection building' }

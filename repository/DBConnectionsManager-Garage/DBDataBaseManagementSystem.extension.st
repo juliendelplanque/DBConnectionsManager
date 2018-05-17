@@ -29,5 +29,6 @@ DBDataBaseManagementSystem >> garageDriverName [
 
 { #category : #'*DBConnectionsManager-Garage' }
 DBDataBaseManagementSystem class >> useGarageDriver [
-	self connectionBuildingSymbol: #buildGarageConnectionFrom:
+	<dbcmDriverSetter>
+	ConnectionBuildingSymbol := #buildGarageConnectionFrom:
 ]
