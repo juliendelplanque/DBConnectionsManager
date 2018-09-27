@@ -33,9 +33,11 @@ DBConnectionsManagerWidget class >> defaultSpec [
 { #category : #menu }
 DBConnectionsManagerWidget class >> menuOn: aBuilder [
 	<worldMenu>
+	aBuilder withSeparatorAfter.
+	
 	(aBuilder item: #'DB Connections Manager')
 		iconName: #glamorousThrough;
-		parent: #DBTools;
+		parent: #Tools;
 		action: [ 
 			self new
 				adaptToConnectionsManager: DBConnectionsManager current;
