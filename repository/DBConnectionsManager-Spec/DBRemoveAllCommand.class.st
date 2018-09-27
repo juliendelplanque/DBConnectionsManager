@@ -4,7 +4,7 @@ Removes all the connections of the connections manager.
 Class {
 	#name : #DBRemoveAllCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

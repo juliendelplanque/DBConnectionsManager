@@ -4,7 +4,7 @@ Connects all the connections of the connections manager.
 Class {
 	#name : #DBConnectAllCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

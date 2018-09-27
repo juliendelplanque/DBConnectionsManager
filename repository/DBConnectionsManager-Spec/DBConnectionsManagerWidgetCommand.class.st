@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'connectionsManagerWidget'
 	],
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

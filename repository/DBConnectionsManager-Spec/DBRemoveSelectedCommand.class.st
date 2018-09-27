@@ -4,7 +4,7 @@ Removes the connection selected in the connections manager.
 Class {
 	#name : #DBRemoveSelectedCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

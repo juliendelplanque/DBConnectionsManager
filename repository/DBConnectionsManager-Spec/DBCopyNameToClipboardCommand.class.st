@@ -4,7 +4,7 @@ Copy the name of the connection selected in the clipboard.
 Class {
 	#name : #DBCopyNameToClipboardCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

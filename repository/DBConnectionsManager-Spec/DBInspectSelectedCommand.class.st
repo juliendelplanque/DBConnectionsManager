@@ -4,7 +4,7 @@ Open an inspector of the connection selected in the connections manager.
 Class {
 	#name : #DBInspectSelectedCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Spec-Commands
+	#category : #'DBConnectionsManager-Spec-Commands'
 }
 
 { #category : #accessing }

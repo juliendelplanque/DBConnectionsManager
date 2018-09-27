@@ -32,7 +32,7 @@ Class {
 		'defaultHostname',
 		'defaultPort'
 	],
-	#category : #DBConnectionsManager-Spec-Widgets
+	#category : #'DBConnectionsManager-Spec-Widgets'
 }
 
 { #category : #defaults }

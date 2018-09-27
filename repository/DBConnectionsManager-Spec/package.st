@@ -1,1 +1,1 @@
-Package { #name : #DBConnectionsManager-Spec }
+Package { #name : #'DBConnectionsManager-Spec' }
