@@ -17,11 +17,9 @@ BaselineOfDBConnectionsManager >> baseline: spec [
 { #category : #baselines }
 BaselineOfDBConnectionsManager >> defineDependencies: spec [
 	spec
-		project: 'Garage-PostgreSQL' with: [
+		baseline: 'Garage' with: [ 
 			spec
-				className: 'ConfigurationOfGarage';
-				version: #stable;
-				repository: 'http://smalltalkhub.com/mc/DBXTalk/Garage/main';
+				repository: 'github://pharo-rdbms/garage:master';
 				loads: #('postgresV2') ];
 		baseline: 'FileDialog' with: [ 
 			spec repository: 'github://peteruhnak/file-dialog/repository' ];
@@ -44,7 +42,7 @@ BaselineOfDBConnectionsManager >> defineGroups: spec [
 BaselineOfDBConnectionsManager >> definePackages: spec [
 	spec
 		package: #DBConnectionsManager;
-		package: #'DBConnectionsManager-Garage' with: [ spec requires: #('DBConnectionsManager' 'Garage-PostgreSQL') ];
+		package: #'DBConnectionsManager-Garage' with: [ spec requires: #('DBConnectionsManager' 'Garage') ];
 		package: #'DBConnectionsManager-P3' with: [ spec requires: #('DBConnectionsManager' 'P3') ];
 		package: #'DBConnectionsManager-Spec' with: [ spec requires: #('DBConnectionsManager') ];
 		package: #'DBConnectionsManager-Serializer' with: [ spec requires: #('DBConnectionsManager') ];
