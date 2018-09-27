@@ -1,1 +1,1 @@
-Package { #name : #DBConnectionsManager-Serializer-Spec }
+Package { #name : #'DBConnectionsManager-Serializer-Spec' }

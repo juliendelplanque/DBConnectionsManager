@@ -18,6 +18,11 @@ DBConnectAllCommand class >> isForAllConnections [
 ]
 
 { #category : #accessing }
+DBConnectAllCommand class >> menuCategory [
+	^ #connecting
+]
+
+{ #category : #accessing }
 DBConnectAllCommand class >> weight [
 	^ 100
 ]

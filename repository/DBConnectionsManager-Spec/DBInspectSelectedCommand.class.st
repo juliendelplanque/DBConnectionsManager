@@ -18,6 +18,11 @@ DBInspectSelectedCommand class >> isForSingleConnection [
 ]
 
 { #category : #accessing }
+DBInspectSelectedCommand class >> menuCategory [
+	^ #others
+]
+
+{ #category : #accessing }
 DBInspectSelectedCommand class >> weight [
 	^ 1000
 ]

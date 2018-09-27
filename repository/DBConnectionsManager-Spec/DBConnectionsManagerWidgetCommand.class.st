@@ -26,6 +26,16 @@ DBConnectionsManagerWidgetCommand class >> isForSingleConnection [
 	^ false
 ]
 
+{ #category : #accessing }
+DBConnectionsManagerWidgetCommand class >> menuCategory [
+	"Returns a symbol which is the category of the command to be displayed in the contextual menu.
+	 If the symbol is #root, the command is displayed as is at the root of the menu.
+	 If an other symbol is returned, the command will be grouped with other commands returning the same symbol.
+	 Default is #root."
+	^ #root
+	
+]
+
 { #category : #'subclasses access' }
 DBConnectionsManagerWidgetCommand class >> subclassesForAllConnections [
 	^ (DBConnectionsManagerWidgetCommand subclasses select: #isForAllConnections) sorted: [ :a :b | a weight < b weight ]

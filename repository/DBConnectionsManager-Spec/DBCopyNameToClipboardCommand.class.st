@@ -18,6 +18,11 @@ DBCopyNameToClipboardCommand class >> isForSingleConnection [
 ]
 
 { #category : #accessing }
+DBCopyNameToClipboardCommand class >> menuCategory [
+	^ #others
+]
+
+{ #category : #accessing }
 DBCopyNameToClipboardCommand class >> weight [
 	^ 500
 ]

@@ -18,6 +18,11 @@ DBRemoveAllCommand class >> isForAllConnections [
 ]
 
 { #category : #accessing }
+DBRemoveAllCommand class >> menuCategory [
+	^ #management
+]
+
+{ #category : #accessing }
 DBRemoveAllCommand class >> weight [
 	^ 300
 ]

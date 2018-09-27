@@ -1,7 +1,7 @@
 Class {
 	#name : #DBMaterializeConnectionCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Serializer-Spec
+	#category : #'DBConnectionsManager-Serializer-Spec'
 }
 
 { #category : #accessing }
@@ -12,6 +12,11 @@ DBMaterializeConnectionCommand class >> commandName [
 { #category : #testing }
 DBMaterializeConnectionCommand class >> isForAllConnections [
 	^ true
+]
+
+{ #category : #accessing }
+DBMaterializeConnectionCommand class >> menuCategory [
+	^ #serializing
 ]
 
 { #category : #accessing }

@@ -18,6 +18,11 @@ DBDisconnectSelectedCommand class >> isForSingleConnection [
 ]
 
 { #category : #accessing }
+DBDisconnectSelectedCommand class >> menuCategory [
+	^ #connecting
+]
+
+{ #category : #accessing }
 DBDisconnectSelectedCommand class >> weight [
 	^ 200
 ]

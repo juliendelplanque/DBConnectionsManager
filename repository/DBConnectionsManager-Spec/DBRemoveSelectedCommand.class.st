@@ -18,6 +18,11 @@ DBRemoveSelectedCommand class >> isForSingleConnection [
 ]
 
 { #category : #accessing }
+DBRemoveSelectedCommand class >> menuCategory [
+	^ #management
+]
+
+{ #category : #accessing }
 DBRemoveSelectedCommand class >> weight [
 	^ 300
 ]

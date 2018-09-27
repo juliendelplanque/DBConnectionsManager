@@ -1,7 +1,7 @@
 Class {
 	#name : #DBSerializeConnectionCommand,
 	#superclass : #DBConnectionsManagerWidgetCommand,
-	#category : #DBConnectionsManager-Serializer-Spec
+	#category : #'DBConnectionsManager-Serializer-Spec'
 }
 
 { #category : #accessing }
@@ -12,6 +12,11 @@ DBSerializeConnectionCommand class >> commandName [
 { #category : #testing }
 DBSerializeConnectionCommand class >> isForSingleConnection [
 	^ true
+]
+
+{ #category : #accessing }
+DBSerializeConnectionCommand class >> menuCategory [
+	^ #serializing
 ]
 
 { #category : #accessing }

@@ -73,26 +73,58 @@ DBConnectionsManagerWidget >> adaptToConnectionsManager: aDBConnectionsManager [
 ]
 
 { #category : #'list menu' }
+DBConnectionsManagerWidget >> buildAllConnectionsListMenuOn: builder [
+	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForAllConnections on: builder
+]
+
+{ #category : #'list menu' }
+DBConnectionsManagerWidget >> buildConnectionSpecificListMenuOn: builder [
+	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForSingleConnection on: builder
+]
+
+{ #category : #'list menu' }
+DBConnectionsManagerWidget >> buildListMenuFor: aCollectionOfCommandClasses on: builder [
+	| categoriesDict |
+	categoriesDict := aCollectionOfCommandClasses groupedBy: #menuCategory.
+	categoriesDict
+		at: #root
+		ifPresent: [ :commands | 
+			commands
+				do: [ :commandClass | 
+					builder
+						add: commandClass commandName
+						target: [ commandClass new
+								connectionsManagerWidget: self;
+								execute ]
+						selector: #value ] ].
+	categoriesDict
+		removeKey: #root
+		ifAbsent: [ "Do nothing on purpose." ].
+	(categoriesDict associations sort: [ :a :b | a key < b key ])
+		do: [ :assoc | 
+			| subMenu |
+			subMenu := MenuMorph new.
+			assoc value
+				do: [ :commandClass | 
+					subMenu
+						add: commandClass commandName
+						target: [ commandClass new
+								connectionsManagerWidget: self;
+								execute ]
+						selector: #value ].
+			builder
+				add: assoc key asCamelCase
+				icon:
+					(self iconNamed: #blank)
+				subMenu: subMenu ]
+]
+
+{ #category : #'list menu' }
 DBConnectionsManagerWidget >> buildListMenuOn: builder [
 	self connectionDescriptionsList selectedConnectionDescription
-		ifNotNil: [ 
-			DBConnectionsManagerWidgetCommand subclassesForSingleConnection do: [ :commandClass |
-				builder
-					add: commandClass commandName
-					target: [ 
-						commandClass new
-							connectionsManagerWidget: self;
-							execute ]
-					selector: #value ] ].
+		ifNotNil: [ self buildConnectionSpecificListMenuOn: builder ].
 	builder addLine.
-	DBConnectionsManagerWidgetCommand subclassesForAllConnections do: [ :commandClass |
-		builder
-			add: commandClass commandName
-			target: [ 
-				commandClass new
-					connectionsManagerWidget: self;
-					execute ]
-			selector: #value ]
+	self buildAllConnectionsListMenuOn: builder
 ]
 
 { #category : #accessing }

@@ -18,6 +18,11 @@ DBDisconnectAllCommand class >> isForAllConnections [
 ]
 
 { #category : #accessing }
+DBDisconnectAllCommand class >> menuCategory [
+	^ #connecting
+]
+
+{ #category : #accessing }
 DBDisconnectAllCommand class >> weight [
 	^ 200
 ]
