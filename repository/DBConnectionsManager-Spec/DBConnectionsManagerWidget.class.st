@@ -13,7 +13,7 @@ Class {
 		'threadCheckerButton',
 		'connectionsManager'
 	],
-	#category : 'DBConnectionsManager-Spec-Widgets'
+	#category : #'DBConnectionsManager-Spec-Widgets'
 }
 
 { #category : #specs }

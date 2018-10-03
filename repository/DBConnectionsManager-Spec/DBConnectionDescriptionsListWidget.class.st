@@ -10,7 +10,7 @@ Class {
 		'connectionDescriptionsList',
 		'subscribedTo'
 	],
-	#category : 'DBConnectionsManager-Spec-Widgets'
+	#category : #'DBConnectionsManager-Spec-Widgets'
 }
 
 { #category : #specs }
@@ -129,7 +129,7 @@ DBConnectionDescriptionsListWidget >> initializePresenter [
 
 { #category : #initialization }
 DBConnectionDescriptionsListWidget >> initializeWidgets [
-	connectionDescriptionsList := self instantiate: FastTableModel
+	connectionDescriptionsList := self instantiate: FastTablePresenter
 ]
 
 { #category : #api }
