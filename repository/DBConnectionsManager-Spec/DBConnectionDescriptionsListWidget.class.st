@@ -129,7 +129,7 @@ DBConnectionDescriptionsListWidget >> initializePresenter [
 
 { #category : #initialization }
 DBConnectionDescriptionsListWidget >> initializeWidgets [
-	connectionDescriptionsList := self instantiate: FastTablePresenter
+	connectionDescriptionsList := self newIconList
 ]
 
 { #category : #api }
