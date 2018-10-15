@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'oldConnectionManager'
 	],
-	#category : #DBConnectionsManager-Announcements
+	#category : #'DBConnectionsManager-Announcements'
 }
 
 { #category : #accessing }

@@ -4,5 +4,5 @@ I am the announcement created by the DBConnectionsManager when it started its th
 Class {
 	#name : #DBConnectionsManagerStartedChecking,
 	#superclass : #DBConnectionsManagerAnnouncement,
-	#category : #DBConnectionsManager-Announcements
+	#category : #'DBConnectionsManager-Announcements'
 }

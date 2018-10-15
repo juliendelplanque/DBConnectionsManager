@@ -42,7 +42,7 @@ DBConnectionsManager class >> resetCurrent [
 	^ current
 ]
 
-{ #category : #adding/removing }
+{ #category : #'adding/removing' }
 DBConnectionsManager >> add: aDBConnectionDescription [
 	(self connections anySatisfy: [ :any | any name = aDBConnectionDescription name ])
 		ifTrue: [ self error: 'The name of a connection description should be unique in all connections descriptions of a DBConnectionsManager.' ].
@@ -202,7 +202,7 @@ DBConnectionsManager >> forwardAnnouncement: aDBConnectionsManagerAnnouncement [
 	self announce: aDBConnectionsManagerAnnouncement
 ]
 
-{ #category : #gt-inspector-extension }
+{ #category : #'gt-inspector-extension' }
 DBConnectionsManager >> gtConnectionsIn: composite [
 	<gtInspectorPresentationOrder: 0> 
 	^ (composite fastTable)
@@ -243,7 +243,7 @@ DBConnectionsManager >> isConnectionsCheckingRunning [
 	^ connectionsCheckerThread isNotNil and: [ connectionsCheckerThread isTerminated not ]
 ]
 
-{ #category : #adding/removing }
+{ #category : #'adding/removing' }
 DBConnectionsManager >> remove: aDBConnectionDescription [
 	self connections remove: aDBConnectionDescription.
 	
@@ -255,7 +255,7 @@ DBConnectionsManager >> remove: aDBConnectionDescription [
 	self announceConnectionDescriptionRemoved: aDBConnectionDescription.
 ]
 
-{ #category : #adding/removing }
+{ #category : #'adding/removing' }
 DBConnectionsManager >> removeAll [
 	self connections copy do: [ :connectionDescription |
 		self remove: connectionDescription ]

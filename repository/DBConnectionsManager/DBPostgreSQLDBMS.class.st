@@ -4,7 +4,7 @@ I model PostgreSQL DBMS.
 Class {
 	#name : #DBPostgreSQLDBMS,
 	#superclass : #DBDataBaseManagementSystem,
-	#category : #DBConnectionsManager-Core
+	#category : #'DBConnectionsManager-Core'
 }
 
 { #category : #accessing }

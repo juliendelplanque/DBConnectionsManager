@@ -4,5 +4,5 @@ I am the announcement created by the DBConnectionsManager when a connection conn
 Class {
 	#name : #DBConnectionWasConnectedByUser,
 	#superclass : #DBConnectionDescriptionAnnouncement,
-	#category : #DBConnectionsManager-Announcements
+	#category : #'DBConnectionsManager-Announcements'
 }

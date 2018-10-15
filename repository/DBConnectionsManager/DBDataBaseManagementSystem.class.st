@@ -7,7 +7,7 @@ Class {
 	#classVars : [
 		'ConnectionBuildingSymbol'
 	],
-	#category : #DBConnectionsManager-Core
+	#category : #'DBConnectionsManager-Core'
 }
 
 { #category : #private }

@@ -48,7 +48,10 @@ DBConnectionDescription >> connect [
 	(self connection isNotNil and: [ self connection isConnected ])
 		ifTrue: [ ^ self ].
 	connection := self buildConnection.
-	connection dbcmConnect.
+	[ connection dbcmConnect ] on: ConnectionTimedOut do: [ 
+		self announcer
+			announce: (DBCanNotConnect connectionDescription: self).
+		^ self ].
 	self
 		hasAlreadyConnect: true;
 		wasDisconnectedByUser: false.

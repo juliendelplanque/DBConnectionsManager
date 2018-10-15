@@ -4,5 +4,5 @@ I am the announcement created by the DBConnectionsManager when a connection that
 Class {
 	#name : #DBConnectionDied,
 	#superclass : #DBConnectionDescriptionAnnouncementWithTestResult,
-	#category : #DBConnectionsManager-Announcements
+	#category : #'DBConnectionsManager-Announcements'
 }
