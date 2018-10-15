@@ -37,7 +37,8 @@ DBConnectionDescriptionsListWidget >> adaptToConnectionsManager: aDBConnectionsM
 		when: DBConnectionWasConnectedByUser send: #connectionWasConnectedByUser: to: self;
 		when: DBConnectionsManagerStartedChecking send: #connectionsManagerStartedChecking: to: self;
 		when: DBConnectionsManagerStoppedChecking send: #connectionsManagerStoppedChecking: to: self;
-		when: DBConnectionStillAlive send: #connectionStillAlive: to: self.
+		when: DBConnectionStillAlive send: #connectionStillAlive: to: self;
+		when: DBCanNotConnect send: #canNotConnect: to: self.
 	
 	connectionDescriptionsList
 		items: aDBConnectionsManager connections
@@ -48,6 +49,13 @@ DBConnectionDescriptionsListWidget >> buildMenuBlock: aBlock [
 	self connectionDescriptionsList menu: [ :builder |
 		aBlock value: builder.
 		builder ]
+]
+
+{ #category : #'announcement handling' }
+DBConnectionDescriptionsListWidget >> canNotConnect: aDBCanNotConnect [
+	aDBCanNotConnect connectionDescription beNotConnectable.
+	
+	self connectionDescriptionsList refreshListItems
 ]
 
 { #category : #accessing }

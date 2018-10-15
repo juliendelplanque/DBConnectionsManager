@@ -11,6 +11,11 @@ DBConnectionDescription >> beDead [
 ]
 
 { #category : #'*DBConnectionsManager-Spec' }
+DBConnectionDescription >> beNotConnectable [
+	self privateState at: #iconState put: #changeRemove
+]
+
+{ #category : #'*DBConnectionsManager-Spec' }
 DBConnectionDescription >> beUnchecked [
 	self privateState at: #iconState put: #testYellow
 ]
