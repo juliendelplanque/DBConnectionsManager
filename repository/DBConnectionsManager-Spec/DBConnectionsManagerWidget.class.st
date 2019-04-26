@@ -74,51 +74,28 @@ DBConnectionsManagerWidget >> adaptToConnectionsManager: aDBConnectionsManager [
 		adaptToConnectionsManager: aDBConnectionsManager.
 ]
 
+{ #category : #'commands registries' }
+DBConnectionsManagerWidget >> allConnectionCommandsRegistry [
+	^ LtCommandsRegistry new
+		registerCommand: LtConnectAllCommand underCategory: #connecting withContextBlock: [ self ];
+		registerCommand: LtDisconnectAllCommand underCategory: #connecting withContextBlock: [ self ];
+		registerCommand: LtRemoveAllCommand underCategory: #management withContextBlock: [ self ];
+		registerCommand: LtMaterializeConnectionCommand underCategory: #serializing withContextBlock: [ self ];
+		registerCommand: LtMaterializeDirectoryCommand underCategory: #serializing withContextBlock: [ self ];
+		registerCommand: LtSerializeConnectionCommand underCategory: #serializing withContextBlock: [ self ];
+		yourself
+]
+
 { #category : #'list menu' }
 DBConnectionsManagerWidget >> buildAllConnectionsListMenuOn: builder [
-	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForAllConnections on: builder
+	self allConnectionCommandsRegistry
+		buildSpecMenuOn: builder
 ]
 
 { #category : #'list menu' }
 DBConnectionsManagerWidget >> buildConnectionSpecificListMenuOn: builder [
-	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForSingleConnection on: builder
-]
-
-{ #category : #'list menu' }
-DBConnectionsManagerWidget >> buildListMenuFor: aCollectionOfCommandClasses on: builder [
-	| categoriesDict |
-	categoriesDict := aCollectionOfCommandClasses groupedBy: #menuCategory.
-	categoriesDict
-		at: #root
-		ifPresent: [ :commands | 
-			commands
-				do: [ :commandClass | 
-					builder
-						add: commandClass commandName
-						target: [ commandClass new
-								connectionsManagerWidget: self;
-								execute ]
-						selector: #value ] ].
-	categoriesDict
-		removeKey: #root
-		ifAbsent: [ "Do nothing on purpose." ].
-	(categoriesDict associations sort: [ :a :b | a key < b key ])
-		do: [ :assoc | 
-			| subMenu |
-			subMenu := MenuMorph new.
-			assoc value
-				do: [ :commandClass | 
-					subMenu
-						add: commandClass commandName
-						target: [ commandClass new
-								connectionsManagerWidget: self;
-								execute ]
-						selector: #value ].
-			builder
-				add: assoc key asCamelCase
-				icon:
-					(self iconNamed: #blank)
-				subMenu: subMenu ]
+	self singleConnectionCommandsRegistry
+		buildSpecMenuOn: builder
 ]
 
 { #category : #'list menu' }
@@ -261,6 +238,17 @@ DBConnectionsManagerWidget >> openWithSpec [
 { #category : #accessing }
 DBConnectionsManagerWidget >> selectedConnectionDescription [
 	^ self connectionDescriptionsList selectedConnectionDescription
+]
+
+{ #category : #'commands registries' }
+DBConnectionsManagerWidget >> singleConnectionCommandsRegistry [
+	^ LtCommandsRegistry new
+		registerCommand: LtConnectSelectedCommand underCategory: #connecting withContextBlock: [ self ];
+		registerCommand: LtDisconnectSelectedCommand underCategory: #connecting withContextBlock: [ self ];
+		registerCommand: LtRemoveSelectedCommand underCategory: #management withContextBlock: [ self ];
+		registerCommand: LtCopyNameToClipboardCommand underCategory: #others withContextBlock: [ self ];
+		registerCommand: LtInspectSelectedCommand underCategory: #others withContextBlock: [ self selectedConnectionDescription ];
+		yourself
 ]
 
 { #category : #accessing }
