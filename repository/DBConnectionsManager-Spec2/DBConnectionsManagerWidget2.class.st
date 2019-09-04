@@ -13,15 +13,15 @@ Class {
 
 { #category : #specs }
 DBConnectionsManagerWidget2 class >> defaultSpec [
-	^ SpPanedLayout newHorizontal
-		add: (SpPanedLayout newVertical
+	^ SpBoxLayout newHorizontal
+		add: (SpBoxLayout newVertical
 				add: #newConnectionButton withConstraints: [ :constraint |
 					constraint height: self buttonHeight ];
-				add: #connectionDescriptionsList;
+				add: #connectionDescriptionsList withConstraints: [ :constraint |
+					constraint fill: true ];
 				add: #threadCheckerButton withConstraints: [ :constraint |
 					constraint height: self buttonHeight ];
 				yourself);
-		addSplitter;
 		add: #connectionDescriptionEditor;
 		yourself
 ]
@@ -156,9 +156,7 @@ DBConnectionsManagerWidget2 >> initialExtent [
 DBConnectionsManagerWidget2 >> initialize [
 	super initialize.
 	self
-		initializeFocusOrder;
-		title: 'DB Connections Manager';
-		windowIcon: (Smalltalk ui iconNamed: #glamorousThrough)
+		initializeFocusOrder
 ]
 
 { #category : #initialization }
@@ -241,6 +239,14 @@ DBConnectionsManagerWidget2 >> initializeWidgets [
 	threadCheckerButton := self newButton
 ]
 
+{ #category : #initialization }
+DBConnectionsManagerWidget2 >> initializeWindow: aWindowPresenter [
+	super initializeWindow: aWindowPresenter.
+	aWindowPresenter
+		title: 'DB Connections Manager';
+		windowIcon: (self iconNamed: #glamorousThrough)
+]
+
 { #category : #accessing }
 DBConnectionsManagerWidget2 >> newConnectionButton [
 	^ newConnectionButton
@@ -267,8 +273,8 @@ DBConnectionsManagerWidget2 >> threadCheckerButton [
 { #category : #'thread checker' }
 DBConnectionsManagerWidget2 >> threadCheckerButtonIcon [
 	^ connectionsManager isCheckingConnections
-		ifTrue: [ Smalltalk ui icons iconNamed: #testGreen ]
-		ifFalse: [ Smalltalk ui icons iconNamed: #testRed ]
+		ifTrue: [ self iconNamed: #testGreen ]
+		ifFalse: [ self iconNamed: #testRed ]
 ]
 
 { #category : #'thread checker' }

@@ -10,7 +10,7 @@ Class {
 
 { #category : #specs }
 DBConnectionDescriptionsListWidget2 class >> defaultSpec [
-	^ SpPanedLayout newVertical
+	^ SpBoxLayout newVertical
 		add: #connectionDescriptionsList;
 		yourself
 ]
@@ -40,7 +40,7 @@ DBConnectionDescriptionsListWidget2 >> adaptToConnectionsManager: aDBConnections
 
 { #category : #api }
 DBConnectionDescriptionsListWidget2 >> buildMenuBlock: aBlock [
-	self connectionDescriptionsList menu: [ :builder |
+	self connectionDescriptionsList contextMenu: [ :builder |
 		aBlock value: builder.
 		builder ]
 ]
@@ -123,15 +123,15 @@ DBConnectionDescriptionsListWidget2 >> descriptionRemoved: aDBConnectionDescript
 { #category : #initialization }
 DBConnectionDescriptionsListWidget2 >> initializePresenter [
 	connectionDescriptionsList
-		displayBlock: [ :connectionDescription | connectionDescription name ];
-		icons: [ :connectionDescription | Smalltalk ui iconNamed: connectionDescription iconState ].
-	
+		display: [ :connectionDescription | connectionDescription name ];
+		icons:
+				[ :connectionDescription | Smalltalk ui iconNamed: connectionDescription iconState ].
 	self sortAlphabetically
 ]
 
 { #category : #initialization }
 DBConnectionDescriptionsListWidget2 >> initializeWidgets [
-	connectionDescriptionsList := self newIconList
+	connectionDescriptionsList := self newList
 ]
 
 { #category : #api }
@@ -174,5 +174,6 @@ DBConnectionDescriptionsListWidget2 >> unsubscribeFromSubscribedTo [
 
 { #category : #api }
 DBConnectionDescriptionsListWidget2 >> whenSelectedItemChanged: aBlock [
-	self connectionDescriptionsList whenSelectedItemChanged: aBlock
+	self connectionDescriptionsList
+		whenSelectionChangedDo: [ :selection | aBlock cull: selection selectedItem ]
 ]

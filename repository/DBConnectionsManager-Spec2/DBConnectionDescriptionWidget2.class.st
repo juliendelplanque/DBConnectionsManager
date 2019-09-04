@@ -54,36 +54,36 @@ DBConnectionDescriptionWidget2 class >> defaultPort: anInteger [
 
 { #category : #specs }
 DBConnectionDescriptionWidget2 class >> defaultSpec [
-	^ SpPanedLayout newVertical
-		add: (SpPanedLayout newHorizontal
+	^ SpBoxLayout newVertical
+		add: (SpBoxLayout newHorizontal
 				add: #connectionNameLabel;
 				add: #connectionNameInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #hostnameLabel;
 				add: #hostnameTextInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #portLabel;
 				add: #portTextInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #databaseLabel;
 				add: #databaseTextInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #userLabel;
 				add: #userTextInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #passwordLabel;
 				add: #passwordTextInput;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #dbmsDropListLabel;
 				add: #dbmsDropList;
 				yourself);
-		add: (SpPanedLayout newHorizontal
+		add: (SpBoxLayout newHorizontal
 				add: #testConnectionButton;
 				add: #cancelButton;
 				add: #okButton;
@@ -302,7 +302,6 @@ DBConnectionDescriptionWidget2 >> initialize [
 	super initialize.
 	self
 		initializeFocusOrder;
-		title: 'Connection Description';
 		hostnameTextInputRegex: '.+';
 		portTextInputRegex: '\d\d\d\d';
 		databaseTextInputRegex: '.+';
@@ -326,56 +325,40 @@ DBConnectionDescriptionWidget2 >> initializeFocusOrder [
 
 { #category : #initialization }
 DBConnectionDescriptionWidget2 >> initializePresenter [
-	connectionNameLabel
-		label: 'Connection name:'.
+	connectionNameLabel label: 'Connection name:'.
 	connectionNameInput
 		autoAccept: true;
-		ghostText: 'my_connection'.
-	
-	hostnameLabel
-		label: 'Hostname:'.
+		placeholder: 'my_connection'.
+	hostnameLabel label: 'Hostname:'.
 	hostnameTextInput
 		autoAccept: true;
-		ghostText: 'ip address/localhost/...'.
-	
-	portLabel
-		label: 'Port:'.
-	portTextInput 
+		placeholder: 'ip address/localhost/...'.
+	portLabel label: 'Port:'.
+	portTextInput
 		autoAccept: true;
-		ghostText: 'Port number e.g. 5432'.
-	
-	databaseLabel
-		label: 'Database:'.
+		placeholder: 'Port number e.g. 5432'.
+	databaseLabel label: 'Database:'.
 	databaseTextInput
 		autoAccept: true;
-		ghostText: 'my_database'.
-	
-	userLabel
-		label: 'User:'.
+		placeholder: 'my_database'.
+	userLabel label: 'User:'.
 	userTextInput
 		autoAccept: true;
-		ghostText: 'DBMS username'.
-	
-	passwordLabel
-		label: 'Password:'.
-	passwordTextInput
-		beEncrypted
+		placeholder: 'DBMS username'.
+	passwordLabel label: 'Password:'.
+	passwordTextInput bePassword
 		autoAccept: true;
-		ghostText: 'DBMS username''s password'.
-		
-	dbmsDropListLabel
-		label: 'DBMS:'.
+		placeholder: 'DBMS username''s password'.
+	dbmsDropListLabel label: 'DBMS:'.
 	dbmsDropList
-		items: (DBDataBaseManagementSystem subclasses sorted: [ :a :b | a dbmsName < b dbmsName ]);
-		displayBlock: [ :class | class dbmsName ].
-		
-	okButton
-		label: 'Ok'.
-		
+		items:
+			(DBDataBaseManagementSystem subclasses
+				sorted: [ :a :b | a dbmsName < b dbmsName ]);
+		display: [ :class | class dbmsName ].
+	okButton label: 'Ok'.
 	cancelButton
 		label: 'Cancel';
 		action: [ self window close ].
-		
 	testConnectionButton
 		label: 'Test connection';
 		action: [ self testConnection ]
@@ -407,6 +390,12 @@ DBConnectionDescriptionWidget2 >> initializeWidgets [
 	okButton := self newButton.
 	cancelButton := self newButton.
 	testConnectionButton := self newButton
+]
+
+{ #category : #initialization }
+DBConnectionDescriptionWidget2 >> initializeWindow: aWindowPresenter [
+	super initializeWindow: aWindowPresenter.
+	aWindowPresenter title: 'Connection Description'
 ]
 
 { #category : #accessing }
