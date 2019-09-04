@@ -192,13 +192,9 @@ DBConnectionsManagerWidget2 >> initializeConnectionDescriptionEditor [
 DBConnectionsManagerWidget2 >> initializeConnectionDescriptionsList [
 	self connectionDescriptionsList
 		whenSelectedItemChanged: [ :item | 
-			item
-				ifNotNil: [ self connectionDescriptionEditor
-						enabled: true;
-						fillFieldsFrom: item ]
-				ifNil: [ self connectionDescriptionEditor
-						enabled: false;
-						clearFields ] ];
+			self connectionDescriptionEditor
+				enabled: true;
+				fillFieldsFrom: item asConnectionDescription ];
 		buildMenuBlock: [ :builder | 
 			self buildListMenuOn: builder ]
 ]

@@ -237,17 +237,7 @@ DBConnectionDescriptionWidget2 >> enabled: aBoolean [
 
 { #category : #'fields filling' }
 DBConnectionDescriptionWidget2 >> fillFieldsFrom: aDBConnectionDescription [
-	self connectionNameInput text: aDBConnectionDescription name.
-
-	self hostnameTextInput text: aDBConnectionDescription hostname.
-	
-	self databaseTextInput text: aDBConnectionDescription databaseName.
-	
-	self userTextInput text: aDBConnectionDescription userName.
-	
-	self passwordTextInput text: aDBConnectionDescription password.
-	
-	self portTextInput text: aDBConnectionDescription port asString
+	aDBConnectionDescription fillConnectionDescriptionWidget: self
 ]
 
 { #category : #'public api' }
