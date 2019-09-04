@@ -49,7 +49,9 @@ DBConnectionDescriptionsListWidget2 >> buildMenuBlock: aBlock [
 DBConnectionDescriptionsListWidget2 >> canNotConnect: aDBCanNotConnect [
 	aDBCanNotConnect connectionDescription beNotConnectable.
 	
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems"
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #accessing }
@@ -62,7 +64,9 @@ DBConnectionDescriptionsListWidget2 >> connectionDied: aDBConnectionDied [
 
 	aDBConnectionDied connectionDescription beDead.
 	
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems"
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #'announcement handling' }
@@ -70,7 +74,9 @@ DBConnectionDescriptionsListWidget2 >> connectionRevive: aDBConnectionRevive [
 
 	aDBConnectionRevive connectionDescription beAlive.
 	
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems"
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #'announcement handling' }
@@ -78,7 +84,9 @@ DBConnectionDescriptionsListWidget2 >> connectionStillAlive: aDBConnectionStillA
 
 	aDBConnectionStillAlive connectionDescription beAlive.
 	
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems".
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #'announcement handling' }
@@ -86,7 +94,9 @@ DBConnectionDescriptionsListWidget2 >> connectionWasConnectedByUser: aDBConnecti
 	aDBConnectionWasConnectedByUser connectionDescription
 		beUnchecked.
 		
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems"
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #'announcement handling' }
@@ -94,7 +104,9 @@ DBConnectionDescriptionsListWidget2 >> connectionWasDisconnectedByUser: aDBConne
 	aDBConnectionWasDisconnectedByUser connectionDescription
 		beUnknown.
 		
-	self connectionDescriptionsList refreshListItems
+	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
+	"self connectionDescriptionsList refreshListItems"
+	self updateConnectionDescriptionsList
 ]
 
 { #category : #'announcement handling' }
@@ -170,6 +182,16 @@ DBConnectionDescriptionsListWidget2 >> unselectConnectionDescription [
 { #category : #private }
 DBConnectionDescriptionsListWidget2 >> unsubscribeFromSubscribedTo [
 	subscribedTo announcer unsubscribe: self
+]
+
+{ #category : #private }
+DBConnectionDescriptionsListWidget2 >> updateConnectionDescriptionsList [
+	| selectedItems |
+	self flag: #TODO. "Dirty hack to make it work for now... Need to use Spec2 API when available."
+	selectedItems := self connectionDescriptionsList selectedItems.
+	self connectionDescriptionsList
+		items: self connectionDescriptionsList items;
+		selectItems: selectedItems
 ]
 
 { #category : #api }

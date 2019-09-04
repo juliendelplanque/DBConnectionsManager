@@ -2,15 +2,10 @@ Class {
 	#name : #DBConnectionDescriptionWidget2,
 	#superclass : #SpPresenter,
 	#instVars : [
-		'hostnameLabel',
 		'hostnameTextInput',
-		'portLabel',
 		'portTextInput',
-		'userLabel',
 		'userTextInput',
-		'passwordLabel',
 		'passwordTextInput',
-		'databaseLabel',
 		'databaseTextInput',
 		'okButton',
 		'cancelButton',
@@ -19,11 +14,9 @@ Class {
 		'databaseTextInputRegex',
 		'userTextInputRegex',
 		'passwordTextInputRegex',
-		'connectionNameLabel',
 		'connectionNameInput',
 		'testConnectionButton',
-		'dbmsDropList',
-		'dbmsDropListLabel'
+		'dbmsDropList'
 	],
 	#classInstVars : [
 		'defaultHostname',
@@ -56,31 +49,31 @@ DBConnectionDescriptionWidget2 class >> defaultPort: anInteger [
 DBConnectionDescriptionWidget2 class >> defaultSpec [
 	^ SpBoxLayout newVertical
 		add: (SpBoxLayout newHorizontal
-				add: #connectionNameLabel;
+				add: 'Connection name:';
 				add: #connectionNameInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #hostnameLabel;
+				add: 'Hostname:';
 				add: #hostnameTextInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #portLabel;
+				add: 'Port:';
 				add: #portTextInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #databaseLabel;
+				add: 'Database:';
 				add: #databaseTextInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #userLabel;
+				add: 'User:';
 				add: #userTextInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #passwordLabel;
+				add: 'Password:';
 				add: #passwordTextInput;
 				yourself);
 		add: (SpBoxLayout newHorizontal
-				add: #dbmsDropListLabel;
+				add: 'DBMS:';
 				add: #dbmsDropList;
 				yourself);
 		add: (SpBoxLayout newHorizontal
@@ -194,19 +187,9 @@ DBConnectionDescriptionWidget2 >> connectionNameInput [
 	^ connectionNameInput
 ]
 
-{ #category : #accessing }
-DBConnectionDescriptionWidget2 >> connectionNameLabel [
-	^ connectionNameLabel
-]
-
 { #category : #'public api' }
 DBConnectionDescriptionWidget2 >> database [
 	^ databaseTextInput text
-]
-
-{ #category : #accessing }
-DBConnectionDescriptionWidget2 >> databaseLabel [
-	^ databaseLabel
 ]
 
 { #category : #accessing }
@@ -227,11 +210,6 @@ DBConnectionDescriptionWidget2 >> databaseTextInputRegex: anObject [
 { #category : #accessing }
 DBConnectionDescriptionWidget2 >> dbmsDropList [
 	^ dbmsDropList
-]
-
-{ #category : #accessing }
-DBConnectionDescriptionWidget2 >> dbmsDropListLabel [
-	^ dbmsDropListLabel
 ]
 
 { #category : #'public api' }
@@ -278,11 +256,6 @@ DBConnectionDescriptionWidget2 >> hostname [
 ]
 
 { #category : #accessing }
-DBConnectionDescriptionWidget2 >> hostnameLabel [
-	^ hostnameLabel
-]
-
-{ #category : #accessing }
 DBConnectionDescriptionWidget2 >> hostnameTextInput [
 	^ hostnameTextInput
 ]
@@ -325,31 +298,24 @@ DBConnectionDescriptionWidget2 >> initializeFocusOrder [
 
 { #category : #initialization }
 DBConnectionDescriptionWidget2 >> initializePresenter [
-	connectionNameLabel label: 'Connection name:'.
 	connectionNameInput
 		autoAccept: true;
 		placeholder: 'my_connection'.
-	hostnameLabel label: 'Hostname:'.
 	hostnameTextInput
 		autoAccept: true;
 		placeholder: 'ip address/localhost/...'.
-	portLabel label: 'Port:'.
 	portTextInput
 		autoAccept: true;
 		placeholder: 'Port number e.g. 5432'.
-	databaseLabel label: 'Database:'.
 	databaseTextInput
 		autoAccept: true;
 		placeholder: 'my_database'.
-	userLabel label: 'User:'.
 	userTextInput
 		autoAccept: true;
 		placeholder: 'DBMS username'.
-	passwordLabel label: 'Password:'.
 	passwordTextInput bePassword
 		autoAccept: true;
 		placeholder: 'DBMS username''s password'.
-	dbmsDropListLabel label: 'DBMS:'.
 	dbmsDropList
 		items:
 			(DBDataBaseManagementSystem subclasses
@@ -366,25 +332,12 @@ DBConnectionDescriptionWidget2 >> initializePresenter [
 
 { #category : #initialization }
 DBConnectionDescriptionWidget2 >> initializeWidgets [
-	connectionNameLabel := self newLabel.
 	connectionNameInput := self newTextInput.
-
-	hostnameLabel := self newLabel.
 	hostnameTextInput := self newTextInput.
-	
-	portLabel := self newLabel.
 	portTextInput := self newTextInput.
-	
-	databaseLabel := self newLabel.
 	databaseTextInput := self newTextInput.
-	
-	userLabel := self newLabel.
 	userTextInput := self newTextInput.
-	
-	passwordLabel := self newLabel.
 	passwordTextInput := self newTextInput.
-	
-	dbmsDropListLabel := self newLabel.
 	dbmsDropList := self newDropList.
 	
 	okButton := self newButton.
@@ -419,11 +372,6 @@ DBConnectionDescriptionWidget2 >> password [
 ]
 
 { #category : #accessing }
-DBConnectionDescriptionWidget2 >> passwordLabel [
-	^ passwordLabel
-]
-
-{ #category : #accessing }
 DBConnectionDescriptionWidget2 >> passwordTextInput [
 	^ passwordTextInput
 ]
@@ -441,11 +389,6 @@ DBConnectionDescriptionWidget2 >> passwordTextInputRegex: anObject [
 { #category : #'public api' }
 DBConnectionDescriptionWidget2 >> port [
 	^ portTextInput text asInteger
-]
-
-{ #category : #accessing }
-DBConnectionDescriptionWidget2 >> portLabel [
-	^ portLabel
 ]
 
 { #category : #accessing }
@@ -482,11 +425,6 @@ DBConnectionDescriptionWidget2 >> testConnectionButton [
 { #category : #'public api' }
 DBConnectionDescriptionWidget2 >> user [
 	^ userTextInput text
-]
-
-{ #category : #accessing }
-DBConnectionDescriptionWidget2 >> userLabel [
-	^ userLabel
 ]
 
 { #category : #accessing }
