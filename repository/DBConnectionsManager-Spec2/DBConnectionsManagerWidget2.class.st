@@ -8,7 +8,7 @@ Class {
 		'threadCheckerButton',
 		'connectionsManager'
 	],
-	#category : #'DBConnectionsManager-Spec2'
+	#category : #'DBConnectionsManager-Spec2-Spec'
 }
 
 { #category : #specs }
@@ -90,7 +90,7 @@ DBConnectionsManagerWidget2 >> buildListMenuFor: aCollectionOfCommandClasses on:
 			commands
 				do: [ :commandClass | 
 					builder
-						add: commandClass commandName
+						add: commandClass defaultName
 						target: [ commandClass new
 								connectionsManagerWidget: self;
 								execute ]
@@ -105,7 +105,7 @@ DBConnectionsManagerWidget2 >> buildListMenuFor: aCollectionOfCommandClasses on:
 			assoc value
 				do: [ :commandClass | 
 					subMenu
-						add: commandClass commandName
+						add: commandClass defaultName
 						target: [ commandClass new
 								connectionsManagerWidget: self;
 								execute ]

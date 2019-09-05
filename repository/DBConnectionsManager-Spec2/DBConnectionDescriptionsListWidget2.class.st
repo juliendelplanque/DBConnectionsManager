@@ -5,8 +5,17 @@ Class {
 		'connectionDescriptionsList',
 		'subscribedTo'
 	],
-	#category : #'DBConnectionsManager-Spec2'
+	#category : #'DBConnectionsManager-Spec2-Spec'
 }
+
+{ #category : #commands }
+DBConnectionDescriptionsListWidget2 class >> buildCommandsGroupWith: presenter forRoot: aCmCommandsGroup [
+	^ aCmCommandsGroup
+		register: ((CmCommandGroup named: 'Connecting') forSpec
+							register: DBConnectSelectedCommand2);
+		register: (CmCommandGroup named: 'Management');
+		register: (CmCommandGroup named: 'Other')
+]
 
 { #category : #specs }
 DBConnectionDescriptionsListWidget2 class >> defaultSpec [

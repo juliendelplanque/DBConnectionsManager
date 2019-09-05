@@ -1,7 +1,7 @@
 Class {
 	#name : #DBNullConnectionDescription,
 	#superclass : #Object,
-	#category : #'DBConnectionsManager-Spec2'
+	#category : #'DBConnectionsManager-Spec2-Spec'
 }
 
 { #category : #'as yet unclassified' }

@@ -22,7 +22,7 @@ Class {
 		'defaultHostname',
 		'defaultPort'
 	],
-	#category : #'DBConnectionsManager-Spec2'
+	#category : #'DBConnectionsManager-Spec2-Spec'
 }
 
 { #category : #defaults }
