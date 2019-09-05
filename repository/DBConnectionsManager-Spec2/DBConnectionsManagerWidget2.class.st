@@ -72,12 +72,12 @@ DBConnectionsManagerWidget2 >> adaptToConnectionsManager: aDBConnectionsManager 
 
 { #category : #'list menu' }
 DBConnectionsManagerWidget2 >> buildAllConnectionsListMenuOn: builder [
-	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForAllConnections on: builder
+	"self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForAllConnections on: builder"
 ]
 
 { #category : #'list menu' }
 DBConnectionsManagerWidget2 >> buildConnectionSpecificListMenuOn: builder [
-	self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForSingleConnection on: builder
+	"self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForSingleConnection on: builder"
 ]
 
 { #category : #'list menu' }

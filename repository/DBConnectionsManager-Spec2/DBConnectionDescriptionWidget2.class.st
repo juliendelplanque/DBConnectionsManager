@@ -287,7 +287,19 @@ DBConnectionDescriptionWidget2 >> initializeFocusOrder [
 ]
 
 { #category : #initialization }
-DBConnectionDescriptionWidget2 >> initializePresenter [
+DBConnectionDescriptionWidget2 >> initializePresenters [
+	connectionNameInput := self newTextInput.
+	hostnameTextInput := self newTextInput.
+	portTextInput := self newTextInput.
+	databaseTextInput := self newTextInput.
+	userTextInput := self newTextInput.
+	passwordTextInput := self newTextInput.
+	dbmsDropList := self newDropList.
+	
+	okButton := self newButton.
+	cancelButton := self newButton.
+	testConnectionButton := self newButton.
+	
 	connectionNameInput
 		autoAccept: true;
 		placeholder: 'my_connection'.
@@ -318,21 +330,6 @@ DBConnectionDescriptionWidget2 >> initializePresenter [
 	testConnectionButton
 		label: 'Test connection';
 		action: [ self testConnection ]
-]
-
-{ #category : #initialization }
-DBConnectionDescriptionWidget2 >> initializeWidgets [
-	connectionNameInput := self newTextInput.
-	hostnameTextInput := self newTextInput.
-	portTextInput := self newTextInput.
-	databaseTextInput := self newTextInput.
-	userTextInput := self newTextInput.
-	passwordTextInput := self newTextInput.
-	dbmsDropList := self newDropList.
-	
-	okButton := self newButton.
-	cancelButton := self newButton.
-	testConnectionButton := self newButton
 ]
 
 { #category : #initialization }
