@@ -206,10 +206,10 @@ DBConnectionDescriptionsListWidget2 >> unsubscribeFromSubscribedTo [
 DBConnectionDescriptionsListWidget2 >> updateConnectionDescriptionsList [
 	| selectedItems |
 	self flag: #TODO. "Dirty hack to make it work for now... Need to use Spec2 API when available."
-	"selectedItems := self connectionDescriptionsList selectedItems.
+	selectedItems := self connectionDescriptionsList selectedItems.
 	self connectionDescriptionsList
 		items: self connectionDescriptionsList items;
-		selectItems: selectedItems"
+		selectItems: selectedItems
 ]
 
 { #category : #api }
