@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'newConnectionButton',
 		'connectionDescriptionsList',
-		'connectionDescriptionEditor',
 		'threadCheckerButton',
 		'connectionsManager'
 	],
@@ -13,16 +12,13 @@ Class {
 
 { #category : #specs }
 DBConnectionsManagerWidget2 class >> defaultSpec [
-	^ SpBoxLayout newHorizontal
-		add: (SpBoxLayout newVertical
-				add: #newConnectionButton withConstraints: [ :constraint |
-					constraint height: self buttonHeight ];
-				add: #connectionDescriptionsList withConstraints: [ :constraint |
-					constraint fill: true ];
-				add: #threadCheckerButton withConstraints: [ :constraint |
-					constraint height: self buttonHeight ];
-				yourself);
-		add: #connectionDescriptionEditor;
+	^ SpBoxLayout newVertical
+		add: #newConnectionButton
+			withConstraints: [ :constraint | constraint height: self buttonHeight ];
+		add: #connectionDescriptionsList
+			withConstraints: [ :constraint | constraint fill: true ];
+		add: #threadCheckerButton
+			withConstraints: [ :constraint | constraint height: self buttonHeight ];
 		yourself
 ]
 
@@ -126,11 +122,6 @@ DBConnectionsManagerWidget2 >> buildListMenuOn: builder [
 ]
 
 { #category : #accessing }
-DBConnectionsManagerWidget2 >> connectionDescriptionEditor [
-	^ connectionDescriptionEditor
-]
-
-{ #category : #accessing }
 DBConnectionsManagerWidget2 >> connectionDescriptionsList [
 	^ connectionDescriptionsList
 ]
@@ -172,40 +163,11 @@ DBConnectionsManagerWidget2 >> initializeConnectionButton [
 ]
 
 { #category : #initialization }
-DBConnectionsManagerWidget2 >> initializeConnectionDescriptionEditor [
-	self connectionDescriptionEditor
-		enabled: false;
-		okButtonAction: [ :editor | 
-			| connectionDescription |
-			connectionDescription := self connectionDescriptionsList
-				selectedConnectionDescription.
-			[ connectionDescription disconnect ]
-				on: Error
-				do: [ "Ignore, we just want to be sure it is disconnected." ].
-			editor adaptToMyself: connectionDescription ];
-		cancelButtonAction: [ :editor | 
-			editor
-				fillFieldsFrom: self connectionDescriptionsList selectedConnectionDescription ]
-]
-
-{ #category : #initialization }
-DBConnectionsManagerWidget2 >> initializeConnectionDescriptionsList [
-	self connectionDescriptionsList
-		whenSelectedItemChanged: [ :item | 
-			self connectionDescriptionEditor
-				enabled: true;
-				fillFieldsFrom: item asConnectionDescription ];
-		buildMenuBlock: [ :builder | 
-			self buildListMenuOn: builder ]
-]
-
-{ #category : #initialization }
 DBConnectionsManagerWidget2 >> initializeFocusOrder [
 	self focusOrder
 		add: self newConnectionButton;
 		add: self connectionDescriptionsList;
-		add: self threadCheckerButton;
-		add: self connectionDescriptionEditor
+		add: self threadCheckerButton
 ]
 
 { #category : #initialization }
@@ -213,8 +175,6 @@ DBConnectionsManagerWidget2 >> initializePresenter [
 	super initializePresenter.
 	self
 		initializeConnectionButton;
-		initializeConnectionDescriptionsList;
-		initializeConnectionDescriptionEditor;
 		initializeThreadCheckerButton
 ]
 
@@ -229,8 +189,6 @@ DBConnectionsManagerWidget2 >> initializeWidgets [
 	newConnectionButton := self newButton.
 	
 	connectionDescriptionsList := self instantiate: DBConnectionDescriptionsListWidget2.
-	
-	connectionDescriptionEditor := self instantiate: DBConnectionDescriptionWidget2.
 	
 	threadCheckerButton := self newButton
 ]

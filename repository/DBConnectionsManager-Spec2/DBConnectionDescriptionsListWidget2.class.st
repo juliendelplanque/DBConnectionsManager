@@ -10,11 +10,38 @@ Class {
 
 { #category : #commands }
 DBConnectionDescriptionsListWidget2 class >> buildCommandsGroupWith: presenter forRoot: aCmCommandsGroup [
-	^ aCmCommandsGroup
-		register: ((CmCommandGroup named: 'Connecting') forSpec
-							register: DBConnectSelectedCommand2);
-		register: (CmCommandGroup named: 'Management');
-		register: (CmCommandGroup named: 'Other')
+	aCmCommandsGroup
+		register: self buildConnectingGroup;
+		register: self buildManagementGroup;
+		register: self buildExtraGroup
+]
+
+{ #category : #commands }
+DBConnectionDescriptionsListWidget2 class >> buildConnectingGroup [
+	^ (CmCommandGroup named: 'Connecting') asSpecGroup
+		register: ((CmCommandGroup named: 'Selected') asSpecGroup beDisplayedAsGroup
+						register: DBConnectSelectedCommand2 forSpec;
+						register: DBDisconnectSelectedCommand2 forSpec);
+		register: ((CmCommandGroup named: 'All') asSpecGroup beDisplayedAsGroup
+						register: DBConnectAllCommand2 forSpec;
+						register: DBDisconnectAllCommand2 forSpec)
+		
+]
+
+{ #category : #commands }
+DBConnectionDescriptionsListWidget2 class >> buildExtraGroup [
+	^ (CmCommandGroup named: 'Extra') asSpecGroup
+		register: DBCopyNameToClipboardCommand2 forSpec;
+		register: DBInspectSelectedCommand2 forSpec
+]
+
+{ #category : #commands }
+DBConnectionDescriptionsListWidget2 class >> buildManagementGroup [
+	^ (CmCommandGroup named: 'Management') asSpecGroup
+		register: ((CmCommandGroup named: 'Selected') asSpecGroup beDisplayedAsGroup
+						register: DBRemoveSelectedCommand2 forSpec);
+		register: ((CmCommandGroup named: 'All') asSpecGroup beDisplayedAsGroup
+						register: DBRemoveAllCommand2 forSpec)
 ]
 
 { #category : #specs }
@@ -47,19 +74,10 @@ DBConnectionDescriptionsListWidget2 >> adaptToConnectionsManager: aDBConnections
 		items: aDBConnectionsManager connections
 ]
 
-{ #category : #api }
-DBConnectionDescriptionsListWidget2 >> buildMenuBlock: aBlock [
-	self connectionDescriptionsList contextMenu: [ :builder |
-		aBlock value: builder.
-		builder ]
-]
-
 { #category : #'announcement handling' }
 DBConnectionDescriptionsListWidget2 >> canNotConnect: aDBCanNotConnect [
 	aDBCanNotConnect connectionDescription beNotConnectable.
 	
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems"
 	self updateConnectionDescriptionsList
 ]
 
@@ -73,8 +91,6 @@ DBConnectionDescriptionsListWidget2 >> connectionDied: aDBConnectionDied [
 
 	aDBConnectionDied connectionDescription beDead.
 	
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems"
 	self updateConnectionDescriptionsList
 ]
 
@@ -83,8 +99,6 @@ DBConnectionDescriptionsListWidget2 >> connectionRevive: aDBConnectionRevive [
 
 	aDBConnectionRevive connectionDescription beAlive.
 	
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems"
 	self updateConnectionDescriptionsList
 ]
 
@@ -93,8 +107,6 @@ DBConnectionDescriptionsListWidget2 >> connectionStillAlive: aDBConnectionStillA
 
 	aDBConnectionStillAlive connectionDescription beAlive.
 	
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems".
 	self updateConnectionDescriptionsList
 ]
 
@@ -102,9 +114,7 @@ DBConnectionDescriptionsListWidget2 >> connectionStillAlive: aDBConnectionStillA
 DBConnectionDescriptionsListWidget2 >> connectionWasConnectedByUser: aDBConnectionWasConnectedByUser [
 	aDBConnectionWasConnectedByUser connectionDescription
 		beUnchecked.
-		
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems"
+	
 	self updateConnectionDescriptionsList
 ]
 
@@ -112,9 +122,7 @@ DBConnectionDescriptionsListWidget2 >> connectionWasConnectedByUser: aDBConnecti
 DBConnectionDescriptionsListWidget2 >> connectionWasDisconnectedByUser: aDBConnectionWasDisconnectedByUser [
 	aDBConnectionWasDisconnectedByUser connectionDescription
 		beUnknown.
-		
-	self flag: #TODO. "See if still needed and if there is something to replace that feature in Spec2."
-	"self connectionDescriptionsList refreshListItems"
+	
 	self updateConnectionDescriptionsList
 ]
 
@@ -142,17 +150,18 @@ DBConnectionDescriptionsListWidget2 >> descriptionRemoved: aDBConnectionDescript
 ]
 
 { #category : #initialization }
-DBConnectionDescriptionsListWidget2 >> initializePresenter [
+DBConnectionDescriptionsListWidget2 >> initializePresenters [
+	connectionDescriptionsList := self newTable.
 	connectionDescriptionsList
-		display: [ :connectionDescription | connectionDescription name ];
-		icons:
-				[ :connectionDescription | Smalltalk ui iconNamed: connectionDescription iconState ].
-	self sortAlphabetically
-]
-
-{ #category : #initialization }
-DBConnectionDescriptionsListWidget2 >> initializeWidgets [
-	connectionDescriptionsList := self newList
+		addColumn: (SpImageTableColumn title: 'Status' evaluated: [ :connectionDescription | self iconNamed: connectionDescription iconState ]);
+		addColumn: (SpStringTableColumn title: 'Name' evaluated: #name);
+		addColumn: (SpStringTableColumn title: 'Database' evaluated: #databaseName);
+		addColumn: (SpStringTableColumn title: 'Hostname' evaluated: #hostname);
+		addColumn: (SpStringTableColumn title: 'Port' evaluated: #port);
+		addColumn: (SpStringTableColumn title: 'User' evaluated: #userName).
+		
+	connectionDescriptionsList
+		contextMenuFromCommandsGroup: [ self rootCommandsGroup ]
 ]
 
 { #category : #api }
@@ -165,7 +174,7 @@ DBConnectionDescriptionsListWidget2 >> openWithSpec [
 
 { #category : #api }
 DBConnectionDescriptionsListWidget2 >> selectedConnectionDescription [
-	^ self connectionDescriptionsList selectedItem
+	^ self connectionDescriptionsList selection selectedItem
 ]
 
 { #category : #api }
@@ -197,10 +206,10 @@ DBConnectionDescriptionsListWidget2 >> unsubscribeFromSubscribedTo [
 DBConnectionDescriptionsListWidget2 >> updateConnectionDescriptionsList [
 	| selectedItems |
 	self flag: #TODO. "Dirty hack to make it work for now... Need to use Spec2 API when available."
-	selectedItems := self connectionDescriptionsList selectedItems.
+	"selectedItems := self connectionDescriptionsList selectedItems.
 	self connectionDescriptionsList
 		items: self connectionDescriptionsList items;
-		selectItems: selectedItems
+		selectItems: selectedItems"
 ]
 
 { #category : #api }
