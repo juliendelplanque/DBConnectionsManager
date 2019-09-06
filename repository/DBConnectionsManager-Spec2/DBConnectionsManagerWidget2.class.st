@@ -66,61 +66,6 @@ DBConnectionsManagerWidget2 >> adaptToConnectionsManager: aDBConnectionsManager 
 		adaptToConnectionsManager: aDBConnectionsManager.
 ]
 
-{ #category : #'list menu' }
-DBConnectionsManagerWidget2 >> buildAllConnectionsListMenuOn: builder [
-	"self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForAllConnections on: builder"
-]
-
-{ #category : #'list menu' }
-DBConnectionsManagerWidget2 >> buildConnectionSpecificListMenuOn: builder [
-	"self buildListMenuFor: DBConnectionsManagerWidgetCommand subclassesForSingleConnection on: builder"
-]
-
-{ #category : #'list menu' }
-DBConnectionsManagerWidget2 >> buildListMenuFor: aCollectionOfCommandClasses on: builder [
-	| categoriesDict |
-	categoriesDict := aCollectionOfCommandClasses groupedBy: #menuCategory.
-	categoriesDict
-		at: #root
-		ifPresent: [ :commands | 
-			commands
-				do: [ :commandClass | 
-					builder
-						add: commandClass defaultName
-						target: [ commandClass new
-								connectionsManagerWidget: self;
-								execute ]
-						selector: #value ] ].
-	categoriesDict
-		removeKey: #root
-		ifAbsent: [ "Do nothing on purpose." ].
-	(categoriesDict associations sort: [ :a :b | a key < b key ])
-		do: [ :assoc | 
-			| subMenu |
-			subMenu := MenuMorph new.
-			assoc value
-				do: [ :commandClass | 
-					subMenu
-						add: commandClass defaultName
-						target: [ commandClass new
-								connectionsManagerWidget: self;
-								execute ]
-						selector: #value ].
-			builder
-				add: assoc key asCamelCase
-				icon:
-					(self iconNamed: #blank)
-				subMenu: subMenu ]
-]
-
-{ #category : #'list menu' }
-DBConnectionsManagerWidget2 >> buildListMenuOn: builder [
-	self connectionDescriptionsList selectedConnectionDescription
-		ifNotNil: [ self buildConnectionSpecificListMenuOn: builder ].
-	builder addLine.
-	self buildAllConnectionsListMenuOn: builder
-]
-
 { #category : #accessing }
 DBConnectionsManagerWidget2 >> connectionDescriptionsList [
 	^ connectionDescriptionsList
